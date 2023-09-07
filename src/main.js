@@ -1,23 +1,13 @@
 // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
-import { initializeApp } from 'firebase/app';
-// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signInWithPopup, getRedirectResult, GoogleAuthProvider, signInWithRedirect, signOut} from "firebase/auth";
 
 myFunction();
 
 
 
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyA1imLO9Ja3K_ybMqXobWMUyU0so-KD3wE",
-//     authDomain: "cashnet-fb028.firebaseapp.com",
-//     projectId: "cashnet-fb028",
-//     storageBucket: "cashnet-fb028.appspot.com",
-//     messagingSenderId: "422620993496",
-//     appId: "1:422620993496:web:d84e53089464250a0544ad",
-//     measurementId: "G-9DDDMH1RHG"
-// };
+
 
 // // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
