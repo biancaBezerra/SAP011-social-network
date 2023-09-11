@@ -8,8 +8,21 @@ import {
     arrayRemove,
     deleteDoc,
   } from 'firebase/firestore';
-  
+    
   import { db } from './fireBaseConfig';
+  
+
+  export const userData = (
+    nameContent,
+    lastnameContent,
+    emailContent,
+    userContent,
+  ) => addDoc(collection(db, 'infos-add'), {
+    name: nameContent,
+    lastname: lastnameContent,
+    email: emailContent,
+    username: userContent,
+  });
   
 //   O código importa funções do Firebase Firestore para:
 

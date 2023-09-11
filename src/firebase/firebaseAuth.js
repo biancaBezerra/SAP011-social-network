@@ -9,6 +9,8 @@ import {
   
   import { auth } from './fireBaseConfig.js';
 
+
+
   export function login (email, password) {
 
     signInWithEmailAndPassword(auth, email, password)
@@ -24,6 +26,21 @@ import {
       console.log(errorCode, errorMessage);
     });
   }
+
+  // cadastro de usuarios novos
+export const createUser = (
+  email,
+  password,
+  userName,
+) => createUserWithEmailAndPassword(
+  auth,
+  email,
+  password,
+).then((userCredential) => {
+  // Depois que criou o usuário executa a função baixo
+  const user = userCredential.user; // atualiza o perfil do usuário
+  return updateProfile(user, { userName });
+});
 
 
 //   O código importa funções do Firebase Authentication (autenticação) para:

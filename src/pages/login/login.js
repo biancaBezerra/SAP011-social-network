@@ -40,9 +40,9 @@ export default () => {
         const password = container.querySelector('#passwordInput').value;
         login(email, password);
         
-    })
+    });
 
     return container;
 
 
-}
+};
