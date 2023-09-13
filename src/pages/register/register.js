@@ -41,7 +41,7 @@ export default () => {
         window.location.hash = "#";
     });
 
-    const goRegister = registerContainer.querySelector('.buttonRegister');
+    const goRegister = registerContainer.querySelector('.register');
     goRegister.addEventListener("submit", (event) => {
         event.preventDefault();
 
