@@ -24,17 +24,64 @@ import {
     username: userContent,
   });
   
-//   O código importa funções do Firebase Firestore para:
+// funções de postagens
 
-// collection: Manipular coleções de documentos.
-// addDoc: Adicionar um novo documento a uma coleção.
-// getDocs: Obter todos os documentos de uma coleção.
-// updateDoc: Atualizar um documento existente.
-// doc: Referenciar um documento específico.
-// arrayUnion: Atualizar um array, adicionando valores únicos.
-// arrayRemove: Atualizar um array, removendo valores específicos.
-// deleteDoc: Excluir um documento.
-// Ele também importa a referência ao seu banco de dados Firestore, db, do arquivo de configuração do Firebase. 
-// Essas funções e a referência ao banco de dados Firestore permitirão que você crie, leia, atualize e exclua dados no 
-// Firebase Firestore, o que é essencial para construir sua rede social de finanças.
+export const createPost  = (
+  date,
+  username,
+  text,
+  uid,
+) => addDoc (collection(db, 'posts'), {
+  date,
+  username,
+  likes: [],
+  text,
+  iud,
+});
+
+export const fetchPosts = async() => {
+  const postsCollection = collection(db, 'posts');
+  const snapshot = await getDocs(postsCollection);
+  const posts = [];
+
+  snapshot.forEach((firePost) => {
+    const post = firePost.data();
+
+    post.id = firePost.id;
+    posts.push(post);
+  });
+
+  posts.sort((post1, post2) => {
+    if (post1.date > post2.date) {
+      return -1;
+    }
+
+    if (post1.date < post2.date) {
+      return 1;
+    }
+
+    return 0;
+  });
+
+  return posts;
+};
+
+export const likeCounter = async(postId, username) => updateDoc(doc(db,'posts', postId), {
+  likes: arrayUnion(username),
+});
+
+export const unlikeCounter = async (postId, username) => updateDoc(doc(db, 'posts', postId), {
+  likes: arrayRemove(username),
+});
+
+export const editPost = async (postId, newText) => {
+  await updateDoc(doc(db, 'posts', postId), {
+    text: newText,
+  });
+};
+
+export const deletePost = async (postId) => {
+  await deleteDoc(doc(db, 'posts', postId));
+};
+
   
