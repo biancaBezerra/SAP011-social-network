@@ -1,42 +1,64 @@
-// Este es el punto de entrada de tu aplicacion
-import login from './pages/login/login';
-import about from './pages/about/about';
-import feed from './pages/feed/feed';
+import { onAuthStateChanged } from 'firebase/auth';
+import { getLoginPage } from './pages/login/login';
 import register from './pages/register/register';
+import feed from './pages/feed/feed';
+import about from './pages/about/about';
+import { auth } from './firebase/fireBaseConfig';
 
-const principal = document.querySelector('#root');
 
-const init = () => {
-    window.addEventListener("hashchange", () => {
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const principal = document.querySelector('#root');
+    let logged = false;
+    
+    const init = () => {
         principal.innerHTML = "";
-        switch(window.location.hash) {
-            case " ":
-                principal.appendChild(login());
+        const pages = window.location.hash;
+    
+        switch(pages) {
+            case "#register":
+                principal.appendChild(register());
+                break;
+            case "#feed":
+                if (logged) {
+                    principal.appendChild(feed());
+                } else {
+                    window.location.hash = "#login"
+                }
+                break;
+            case "#login":
+                if (!logged) {
+                    principal.appendChild(getLoginPage());
+                } else {
+                    window.location.hash = "#feed"
+                }
                 break;
             case "#about":
                 principal.appendChild(about());
                 break;
-            case "#feed":
-                principal.appendChild(feed());
-                break;
-            case "#register":
-                principal.appendChild(register());
-                break;
             default:
-                principal.appendChild(login());
+                window.location.hash = "#login";
+                break;
         }
-    });
-}
+    
+    };
 
-window.addEventListener("load", () => {
-    principal.appendChild(login());
-    init();
+    window.addEventListener('hashchange', init);
+
+    window.addEventListener('load', init);
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          logged = true;
+          window.location.hash = '#feed'; // Redireciona para a página de feed
+        } else {
+          logged = false;
+          window.location.hash = '#login'; // Redireciona para a página de login
+        }
+    });    
 });
 
 
 
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
 
 

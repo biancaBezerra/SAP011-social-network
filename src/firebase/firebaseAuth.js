@@ -19,10 +19,10 @@ export const createUser = (
   auth,
   email,
   password,
-).then((userCredential) => {
+).then(async (userCredential) => {
   // Depois que criou o usuário executa a função baixo
   const user = userCredential.user; // atualiza o perfil do usuário
-  return updateProfile(user, { displayName });
+  return await updateProfile(user, { displayName });
 });
 
 //login do usuario

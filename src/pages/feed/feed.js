@@ -9,7 +9,8 @@ import {
     editPost,
 } from '../../firebase/firebaseStore';
 import customAlert from '../../lib/customAlert';
-
+import customDialog from '../../lib/customDialog';
+import customEditDialog from '../../lib/customEditDialog';
 
 function createPostContainer (post, feedElement) {
     const postElement = document.createElement('div');
@@ -21,6 +22,8 @@ function createPostContainer (post, feedElement) {
     const dateSeconds = seconds * 1000 + nanoseconds / 1000000;
 
     const data = new Date(dateSeconds);
+
+    let formattedDate = '';
 
     if (data.getHours() < 24) {
         const hora = (`0${data.getHours()}`).slice(-2);
@@ -104,35 +107,128 @@ function createPostContainer (post, feedElement) {
       });
     }
 
+    const buttonEdit = postElement.querySelector('.button-edit');
+    if (buttonEdit) {
+        buttonEdit.addEventListener('click', () => {
+            customEditDialog(post.text, (newText) => {
+                const postId = postElement.getAttribute('data-post-id');
+                if (newText) {
+                    editPost (postId, newText)
+                    .then (() => {
+                        const textElement = postElement.querySelector('.text');
+                        textElement.textContent = newText;
 
+                        post.text = newText;
+                        customAlert ('Suas alterações foram salvas.')
+                    })
+                    .catch (() => {
+                        customAlert ('Ocorreu um erro ao editar o post. Por favor, tente novamente mais tarde.',);
+                    });
+                } else { 
+                    customDialog('Você não pode publicar um post vazio.');
+                }
+            });
+        });
+    };
+
+    return postElement;
 }
+
+async function showFeed() {
+    const posts = await fetchPosts();
+    const feedElement = document.querySelector('#feed');
+  
+    feedElement.innerHTML = '';
+  
+    posts.forEach((post) => {
+      const postElement = createPostContainer(post, feedElement);
+      feedElement.appendChild(postElement);
+    });
+};
 
 
 
 export default () =>{
     const feedContainer = document.createElement('div');
+    feedContainer.classList.add ('feed-container');
 
-    const feedTemplate = `
+    const content = `
         <header>
             <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
+            <h3>Conectando Saberes Financeiros</h3>
         </header>
         
-        <h3>Conectando Saberes Financeiros</h3>
-        
-        <p> O CashNet é um inovador projeto de rede social voltado para a interação, aprendizado e compartilhamento de 
-        conhecimentos relacionados a finanças e o mercado financeiro. 
-        Projetado para atender tanto a entusiastas quanto a profissionais experientes do setor financeiro, o CashNet 
-        oferece uma plataforma colaborativa que permite aos usuários se envolverem em discussões aprofundadas sobre temas 
-        financeiros, trocar insights valiosos e se manterem atualizados sobre as últimas tendências econômicas.
-        </p>
-        
-        <section id="login">
-            <a href="/#"><button id="login">Voltar ao inicio</button></a>
+        <section class='space-feed'>
+            <section class='menu-bar'>
+                <nav class="nav-footer">
+                    <ul class="ul-footer">
+                        <li class="li-footer"><a href="/#feed"><span class="material-symbols-outlined">House</span>Home</a></li>
+                        <li class="li-footer"><a href="/#about"><span class="material-symbols-outlined">info</span>Sobre</a></li>
+                        <li class="li-footer"><span class="material-symbols-outlined">keyboard_double_arrow_up</span>Topo</li>
+                        <li class="li-footer"><span id = "button-logout" class="material-symbols-outlined">logout</span>Exit</li>
+                    </ul>
+                </nav>
+
+
+
+            </section>
+
+            <div class='div-line'></div>
+
+            <section class='publish'>
+                <span class ='welcome'>Olá, ${auth.currentUser.displayName}!</span>
+                <textarea id='input-text' class='input-text' type='text' placeholder='Compartilhe aqui seus saberes!'></textarea>
+                <button id='button-publish' class='button-publish'>Publicar</button>
+            </section>
+
+            <div class='div-line'></div>
+
+            <section id='feed'></section>
         </section>
         `;
 
-    feedContainer.innerHTML = feedTemplate;
+    feedContainer.innerHTML = content;
+
+    const inputText = feedContainer.querySelector('#input-text');
+    const buttonPublish = feedContainer.querySelector('#button-publish');
+    buttonPublish.addEventListener('click', () => {
+      if (inputText.value !== '') {
+        createPost(
+          new Date(),
+          auth.currentUser.displayName,
+          inputText.value,
+          auth.currentUser.uid,
+        )
+          .then(() => {
+            customAlert('Seu post foi publicado com sucesso');
+            inputText.value = '';
+            showFeed();
+          })
+          .catch(() => {
+            customAlert('Erro ao publicar post');
+          });
+      } else {
+        customDialog('Você não pode publicar um post vazio.');
+      }
+    });
+  
+    const buttonLogOut = feedContainer.querySelector('#button-logout');
+    buttonLogOut.addEventListener('click', () => {
+      customDialog('Deseja realmente sair?', () => {
+        logOut()
+          .then(() => {
+            window.location.hash = '#login';
+          })
+          .catch(() => {
+            customAlert('Erro ao sair. Tente novamente.');
+          });
+      });
+    });
+  
+
+    showFeed();
+
 
     return feedContainer;
         
-}
+};

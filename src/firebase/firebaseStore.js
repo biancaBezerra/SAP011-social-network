@@ -36,7 +36,7 @@ export const createPost  = (
   username,
   likes: [],
   text,
-  iud,
+  uid,
 });
 
 export const fetchPosts = async() => {

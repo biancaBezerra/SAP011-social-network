@@ -4,6 +4,7 @@ import customAlert from "../../lib/customAlert";
 
 function autenticationLogin (container) {
     const loginUser = container.querySelector('#loginEmailPassword');
+    const buttonNewAccount = container.querySelector('#register');
     const googleLogin = container.querySelector('#google');
     const userEmail = container.querySelector('#emailAdress');
     const errorEmail = container.querySelector('#text-email-error');
@@ -67,11 +68,17 @@ function autenticationLogin (container) {
                 customAlert("Erro ao logar com Google")
             });
     });
+
+    buttonNewAccount.addEventListener('click', () => {
+        window.location.hash = '#register';
+    });
 }
 
 
-export default () => {
+
+export const getLoginPage = () => {
     const container = document.createElement('div');
+    container.classList.add('login-container');
 
     const template = `
         <header>
@@ -79,27 +86,31 @@ export default () => {
             <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
         </header>
 
-        <form id="loginEmailPassword">
-            <label for="email">Email</label>
-            <input id="emailAdress" type="text" placeholder="user@casnet.com">
-            <span class='text-error' id='text-email-error'></span>  
-            <label for="password">Senha</label>
-            <input id="passwordInput" type="password" placeholder="digite sua senha">
-            <span class='text-error' id='text-password-error'></span> 
-            <button id="signIn">Entrar</button>
-        </form>
+        <section id="loginContainer">
+            <form id="loginEmailPassword">
+                <label for="email">Email</label>
+                <input class='input-login' id="emailAdress" type="text" placeholder="user@casnet.com">
+                <span class='text-email-error'></span>
+                <span class='text-error' id='text-email-error'></span>  
+                <label for="password">Senha</label>
+                <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha">
+                <span class='text-password-error'></span>
+                <span class='text-error' id='text-password-error'></span> 
+                <button class = "buttonLogin" id="signIn" type = "submit">Entrar</button>
+            </form>
+        </section>
 
         <section id="loginGoogle">
-            <button id="google"> Entre com sua conta Google</button>
+            <button class = "button-loggin-google" id="google"> Entre com sua conta Google</button>
         </section>
 
         <section id="register">
             <p>Ainda não tem uma conta?</p>
-            <a href="/#register"><button id="register">Criar conta</button></a>
+            <button class = "button-new-account" id="register">Criar conta</button>
         </section>
 
         <section id="about">
-        <a href="/#about"><button id="about">Sobre o CashNet</button></a>
+            <a href="/#about"><button class="about">Sobre o CashNet</button></a>
         </section>
     `;
     
