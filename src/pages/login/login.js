@@ -65,7 +65,7 @@ function autenticationLogin (container) {
             })
     
             .catch(() => {
-                customAlert("Erro ao logar com Google")
+                customAlert("Erro ao logar com Google");
             });
     });
 
@@ -73,7 +73,6 @@ function autenticationLogin (container) {
         window.location.hash = '#register';
     });
 }
-
 
 
 export const getLoginPage = () => {
@@ -89,11 +88,11 @@ export const getLoginPage = () => {
         <section id="loginContainer">
             <form id="loginEmailPassword">
                 <label for="email">Email</label>
-                <input class='input-login' id="emailAdress" type="text" placeholder="user@casnet.com">
+                <input class='input-login' id="emailAdress" type="text" placeholder="user@casnet.com" autocomplete="username">
                 <span class='text-email-error'></span>
                 <span class='text-error' id='text-email-error'></span>  
                 <label for="password">Senha</label>
-                <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha">
+                <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password">
                 <span class='text-password-error'></span>
                 <span class='text-error' id='text-password-error'></span> 
                 <button class = "buttonLogin" id="signIn" type = "submit">Entrar</button>

@@ -7,7 +7,7 @@ import {
     updateProfile,
   } from 'firebase/auth';
   
-  import { auth } from './fireBaseConfig.js';
+  import { auth } from './firebaseConfig.js';
 
 
   // cadastro de usuarios novos

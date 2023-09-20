@@ -9,7 +9,7 @@ import {
     deleteDoc,
   } from 'firebase/firestore';
     
-  import { db } from './fireBaseConfig';
+  import { db } from './firebaseConfig';
   
 
   export const userData = (

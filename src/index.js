@@ -3,7 +3,7 @@ import { getLoginPage } from './pages/login/login';
 import register from './pages/register/register';
 import feed from './pages/feed/feed';
 import about from './pages/about/about';
-import { auth } from './firebase/fireBaseConfig';
+import { auth } from './firebase/firebaseConfig';
 
 
 
@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });    
 });
+
+
+
+
 
 
 

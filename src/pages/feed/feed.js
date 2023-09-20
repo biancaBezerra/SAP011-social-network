@@ -1,5 +1,5 @@
 import {logOut} from "../../firebase/firebaseAuth";
-import { auth } from "../../firebase/fireBaseConfig";
+import { auth } from "../../firebase/firebaseConfig";
 import {
     fetchPosts,
     createPost,
@@ -21,25 +21,34 @@ function createPostContainer (post, feedElement) {
 
     const dateSeconds = seconds * 1000 + nanoseconds / 1000000;
 
-    const data = new Date(dateSeconds);
+    const postDate = new Date(dateSeconds);
+    const currentDate = new Date();
 
     let formattedDate = '';
 
-    if (data.getHours() < 24) {
-        const hora = (`0${data.getHours()}`).slice(-2);
-        const minuto = (`0${data.getMinutes()}`).slice(-2);
-        formattedDate = `${hora}:${minuto}`;
+    const timeDifferenceInMilliseconds = currentDate - postDate;
+    const timeDifferenceInSeconds = timeDifferenceInMilliseconds / 1000;
+
+    if (timeDifferenceInSeconds < 60) {
+        const secondsAgo = Math.round(timeDifferenceInSeconds);
+        formattedDate = `há ${secondsAgo} segundo${secondsAgo !== 1 ? 's' : ''}`;
+    } else if (timeDifferenceInSeconds < 3600) {
+        const minutesAgo = Math.round(timeDifferenceInSeconds / 60);
+        formattedDate = `há ${minutesAgo} minuto${minutesAgo !== 1 ? 's' : ''}`;
+    } else if (timeDifferenceInSeconds < 86400) {
+        const hoursAgo = Math.round(timeDifferenceInSeconds / 3600);
+        formattedDate = `há ${hoursAgo} hora${hoursAgo !== 1 ? 's' : ''}`;
     } else {
-        const ano = data.getFullYear();
-        const mes = (`0${data.getMonth() + 1}`).slice(-2);
-        const dia = (`0${data.getDate()}`).slice(-2);
-        formattedDate = `${ano}-${mes}-${dia}`;
+        const day = (`0${postDate.getDate()}`).slice(-2);
+        const month = (`0${postDate.getMonth() + 1}`).slice(-2);
+        const year = postDate.getFullYear();
+        formattedDate = `${day}/${month}/${year}`;
     }
 
-    const editButton = post.uid === auth.currentUser.add
+    const editButton = post.uid === auth.currentUser.uid
         ? '<p class="button-edit"><span class="material-symbols-outlined">edit_square</span></p>' : '';
 
-    const deleteButton = post.uid === auth.currentUser.add 
+    const deleteButton = post.uid === auth.currentUser.uid 
         ? '<p class="button-delete"id="button-delete"><span class="material-symbols-outlined">delete</span></p>' : '';
 
     
@@ -168,9 +177,6 @@ export default () =>{
                         <li class="li-footer"><span id = "button-logout" class="material-symbols-outlined">logout</span>Exit</li>
                     </ul>
                 </nav>
-
-
-
             </section>
 
             <div class='div-line'></div>

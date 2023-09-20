@@ -22,10 +22,10 @@ export default () => {
             <input id="userName" type="text" placeholder= "userCashnet">
             <span class='text-error' id='text-user-error'></span> 
             <label for="email">Email</label>
-            <input id="emailAdress" type="text" placeholder="user@cashnet.com"> 
+            <input id="emailAdress" type="text" placeholder="user@cashnet.com" autocomplete="username"> 
             <span class='text-error' id='text-email-error'></span> 
             <label for="password">Senha</label>
-            <input id="passwordInput" type="password" placeholder="digite sua senha">
+            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password">
             <span class='text-error' id='text-password-error'></span> 
             <section id="buttons">
                 <button class='buttonRegister' id='buttonRegister' type='submit' >Criar Conta</button>
@@ -38,7 +38,7 @@ export default () => {
 
     const goLogin = registerContainer.querySelector('#login');
     goLogin.addEventListener("click", () => {
-        window.location.hash = "#";
+        window.location.hash = "#login";
     });
 
     const goRegister = registerContainer.querySelector('.register');
@@ -100,7 +100,7 @@ export default () => {
                 ))
                 .then(() => {
                     customAlert('Cadastro realizado com sucesso');
-                    window.location.hash = "#";
+                    window.location.hash = "#feed";
                 })
                 .catch((error) => {
                     switch(error.code) {
