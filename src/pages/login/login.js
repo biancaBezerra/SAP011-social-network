@@ -1,4 +1,5 @@
 import { signIn, signInGoogle } from "../../firebase/firebaseAuth";
+import { togglePasswordVisibility } from "../../lib/passwordToggle"
 import customAlert from "../../lib/customAlert";
 
 
@@ -72,7 +73,12 @@ function autenticationLogin (container) {
     buttonNewAccount.addEventListener('click', () => {
         window.location.hash = '#register';
     });
+
+    const toggleIcon = container.querySelector('#togglePassword');
+    toggleIcon.addEventListener('click', togglePasswordVisibility);
 }
+
+
 
 
 export const getLoginPage = () => {
@@ -92,7 +98,7 @@ export const getLoginPage = () => {
                 <span class='text-email-error'></span>
                 <span class='text-error' id='text-email-error'></span>  
                 <label for="password">Senha</label>
-                <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password">
+                <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
                 <span class='text-password-error'></span>
                 <span class='text-error' id='text-password-error'></span> 
                 <button class = "buttonLogin" id="signIn" type = "submit">Entrar</button>

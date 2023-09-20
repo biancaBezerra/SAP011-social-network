@@ -107,7 +107,7 @@ function createPostContainer (post, feedElement) {
 
     const buttonDelete = postElement.querySelector('#button-delete');
     if (buttonDelete) {
-      buttonDelete.addEventListener('click', async () => {
+      buttonDelete.addEventListener('click', () => {
         customDialog('Esta operação é irreversível, deseja mesmo excluir o post?', async () => {
           await deletePost(post.id);
   
@@ -126,7 +126,7 @@ function createPostContainer (post, feedElement) {
                     .then (() => {
                         const textElement = postElement.querySelector('.text');
                         textElement.textContent = newText;
-
+                        
                         post.text = newText;
                         customAlert ('Suas alterações foram salvas.')
                     })
@@ -217,6 +217,9 @@ export default () =>{
         customDialog('Você não pode publicar um post vazio.');
       }
     });
+
+    showFeed();
+
   
     const buttonLogOut = feedContainer.querySelector('#button-logout');
     buttonLogOut.addEventListener('click', () => {
@@ -230,9 +233,6 @@ export default () =>{
           });
       });
     });
-  
-
-    showFeed();
 
 
     return feedContainer;

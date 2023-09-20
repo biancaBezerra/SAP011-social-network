@@ -1,6 +1,7 @@
 import { createUser } from "../../firebase/firebaseAuth";
 import { userData } from "../../firebase/firebaseStore";
 import customAlert from "../../lib/customAlert";
+import { togglePasswordVisibility } from "../../lib/passwordToggle";
 
 export default () => {
     const registerContainer = document.createElement('div');
@@ -25,7 +26,7 @@ export default () => {
             <input id="emailAdress" type="text" placeholder="user@cashnet.com" autocomplete="username"> 
             <span class='text-error' id='text-email-error'></span> 
             <label for="password">Senha</label>
-            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password">
+            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
             <span class='text-error' id='text-password-error'></span> 
             <section id="buttons">
                 <button class='buttonRegister' id='buttonRegister' type='submit' >Criar Conta</button>
@@ -35,6 +36,9 @@ export default () => {
     `;
     
     registerContainer.innerHTML = registerTemplate;
+
+    const toggleIcon = registerContainer.querySelector('#togglePassword');
+    toggleIcon.addEventListener('click', togglePasswordVisibility);
 
     const goLogin = registerContainer.querySelector('#login');
     goLogin.addEventListener("click", () => {
