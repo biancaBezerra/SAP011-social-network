@@ -91,33 +91,34 @@ export const getLoginPage = () => {
             <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
         </header>
 
-        <section id="loginContainer">
-            <form id="loginEmailPassword">
-                <label for="email">Email</label>
+        <section class ="loginContainer" id="loginContainer">
+            <form class= "loginEmailPassword" id="loginEmailPassword">
+                <label class "emailLogin for="email">Email</label>
                 <input class='input-login' id="emailAdress" type="text" placeholder="user@casnet.com" autocomplete="username">
                 <span class='text-email-error'></span>
                 <span class='text-error' id='text-email-error'></span>  
-                <label for="password">Senha</label>
+                <label class= "passwordLogin for="password">Senha</label>
                 <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
                 <span class='text-password-error'></span>
                 <span class='text-error' id='text-password-error'></span> 
                 <button class = "buttonLogin" id="signIn" type = "submit">Entrar</button>
             </form>
+            
+            <section id="loginGoogle">
+                <button class = "button-login-google" id="google"> Entre com Google</button>
+                <img id= "googleLogo" src="./images/google-icon.png" alt="logo_google">
+            </section>
+            
+            <section id="register">
+                <p>Ainda não tem uma conta?</p>
+                <button class = "button-new-account" id="register">Criar conta</button>
+            </section>
+            
+            <section id="about">
+                <a href="/#about"><button class="about">Sobre o CashNet</button></a>
+            </section>
         </section>
-
-        <section id="loginGoogle">
-            <button class = "button-loggin-google" id="google"> Entre com sua conta Google</button>
-        </section>
-
-        <section id="register">
-            <p>Ainda não tem uma conta?</p>
-            <button class = "button-new-account" id="register">Criar conta</button>
-        </section>
-
-        <section id="about">
-            <a href="/#about"><button class="about">Sobre o CashNet</button></a>
-        </section>
-    `;
+            `;
     
     container.innerHTML = template;
 
