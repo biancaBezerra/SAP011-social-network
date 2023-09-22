@@ -12,18 +12,6 @@ html{
 header {
     display: flex;
     flex-direction: column;
-    
-}
-
-h2 {
-    text-align: right;
-    display: flex;
-    padding: 5vw;
-    width: 100vw;
-    height: 15vh;
-    font-family: 'Space Mono', monospace;
-    font-size: 5.7vw;
-    color: #C1FF72;
 }
 
 main {

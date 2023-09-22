@@ -163,8 +163,7 @@ export default () =>{
 
     const content = `
         <header>
-            <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
-            <h3>Conectando Saberes Financeiros</h3>
+            <img id= "logoMobileFeed" src="./images/logo_desktop.png" alt="logo_cashNet">
         </header>
         
         <section class='space-feed'>
@@ -184,9 +183,10 @@ export default () =>{
             <section class='publish'>
                 <span class ='welcome'>Olá, ${auth.currentUser.displayName}!</span>
                 <textarea id='input-text' class='input-text' type='text' placeholder='Compartilhe aqui seus saberes!'></textarea>
+            </section>
+            <section class='publishButton'>
                 <button id='button-publish' class='button-publish'>Publicar</button>
             </section>
-
             <div class='div-line'></div>
 
             <section id='feed'></section>

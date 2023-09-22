@@ -7,6 +7,16 @@
     font-family: 'Space Mono', monospace;
 }
 
+h2 {
+    text-align: right;
+    display: flex;
+    padding: 5vw;
+    width: 100vw;
+    height: 15vh;
+    font-family: 'Space Mono', monospace;
+    font-size: 5.7vw;
+    color: #C1FF72;
+}
 
 #logoMobile {
     width:58vw;
@@ -21,12 +31,10 @@
     padding: 5vw;
 }
 
-
 .loginEmailPassword {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    /* border: 1px solid #ccc; */
     border-radius: 10px;
     width: 98%;
     height:30vh;
@@ -44,7 +52,6 @@ input{
     border-radius: 2vw;
     padding: 2vw;
 }
-
 
 .buttonLogin {
     width: 35vw;
@@ -89,7 +96,7 @@ input{
 
 #googleLogo{
     width: 11vw;
-    padding: 1vw;
+    padding: 2vw;
 }
 
 #register {
@@ -97,8 +104,8 @@ input{
     flex-direction: column;
     align-items: center;
     color:#E13D93;
-    padding: 3vw;
-    gap: 4vw;
+    padding: 5vw;
+    gap: 5vw;
     border: none;
     justify-content: center;
 }
@@ -134,15 +141,43 @@ footer p {
     display: flex;
     flex-direction: row;
     color:#E13D93;
-    padding: 0 3vw;
+    padding: 0 9vw;
     border: none;
-    font-size: 3.5vw;
+    font-size: 3.1vw;
     align-items: center;
 }
 
-a {
+.footerA {
     text-decoration: none;
     color:#C1FF72
+}
+
+@media screen and (min-width: 768px) {
+
+    header{
+        width: 100vw;
+        height: 20vh;
+    }
+
+    h2 {
+        font-size: 4vw;
+        padding-left: 20vw;
+    }
+
+    #logoMobile {
+        width:48vw;
+        height:15vh;
+    }
+
+    .loginContainer {
+        padding: 15vw;
+    }
+
+    .loginEmailPassword {   
+        font-size: 3vw;
+    }
+
+
 }
 
 
