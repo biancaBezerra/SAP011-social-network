@@ -26,7 +26,10 @@ export default () => {
             <input id="emailAdress" type="text" placeholder="user@cashnet.com" autocomplete="username"> 
             <span class='text-error' id='text-email-error'></span> 
             <label for="password">Senha</label>
-            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password-register"><i class="fas fa-eye"></i></span>
+            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password">
+            <span id="togglePassword" class="toggle-password-register">
+                <i class="fas fa-eye"></i>
+            </span>
             <span class='text-error' id='text-password-error'></span> 
             <section id="buttons">
                 <button class='buttonRegister' id='buttonRegister' type='submit' >Criar Conta</button>

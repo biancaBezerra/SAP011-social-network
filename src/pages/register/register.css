@@ -49,18 +49,18 @@ label {
     background-color: #E13D93;
     border: none;
     border-radius: 3vw;
-    width: 50%;
+    width: 55%;
     height: 4vh;
     
 }
 
-.toggle-password-register  {
+.toggle-password-register i {
     cursor: pointer;
     position: absolute;
-    top: 66.5%;
-    right: 11%;
+    top: 28.3em;
+    right: 2em;
     transform: translateY(-20%);
     font-size: 5vw;
     color: #B54F92;
-  }
+}
 
