@@ -8,8 +8,8 @@ export default () => {
     
     const registerTemplate = `
         <header>
-            <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
-            <h2>Cadastre-se</h2>
+            <img class= "logoMobileAbout" src="./images/logo_desktop.png" alt="logo_cashNet">
+            <h2 id = "register">Cadastre-se</h2>
         </header>
 
         <form class= "register" id="register">

@@ -1,0 +1,9 @@
+.logoMobileAbout{
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    padding: 5vw;
+    align-self: center; 
+}

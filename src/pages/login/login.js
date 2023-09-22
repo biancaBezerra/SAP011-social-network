@@ -100,7 +100,7 @@ export const getLoginPage = () => {
                 <label class= "passwordLogin for="password">Senha</label>
                 <input class='input-login' id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
                 <span class='text-password-error'></span>
-                <span class='text-error' id='text-password-error'></span> 
+                <span class='text-error' id='text-password-error'></span>
                 <button class = "buttonLogin" id="signIn" type = "submit">Entrar</button>
             </form>
             

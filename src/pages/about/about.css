@@ -1,0 +1,38 @@
+.logoMobileAbout {
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    padding: 5vw;
+    align-self: center;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+    padding: 0 2vw;
+    font-size: 5vw;
+}
+
+#textAbout {
+    text-align: center;
+    color: #fff;
+    padding: 1vw 2vw 10vw;
+    font-size: 4.5vw;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6vw 10vw;
+}
+
+#loginAbout {
+    color: #fff;
+    background-color: #E13D93;
+    border: none;
+    border-radius: 3vw;
+    padding: 2vw;
+}

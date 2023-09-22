@@ -2,7 +2,6 @@
 
 *{
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Space Mono', monospace;
@@ -92,3 +91,58 @@ input{
     width: 11vw;
     padding: 1vw;
 }
+
+#register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#E13D93;
+    padding: 3vw;
+    gap: 4vw;
+    border: none;
+    justify-content: center;
+}
+
+.button-new-account {
+    width: 70%;
+    height: 5vh;
+    background-color: #C1FF72;
+    font-size: 4.2vw;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.2vw; /* largura da borda */
+    border-radius: 3vw;
+    gap: 10vw;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#000000;
+    padding: 2vw;
+    border: none;
+    justify-content: center;
+    background-color: #C9E0F5;
+    border-radius: 3vw;
+}
+
+#about {
+    padding: 7vw;
+}
+
+footer p {
+    display: flex;
+    flex-direction: row;
+    color:#E13D93;
+    padding: 0 3vw;
+    border: none;
+    font-size: 3.5vw;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color:#C1FF72
+}
+
+
