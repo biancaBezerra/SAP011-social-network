@@ -59,7 +59,7 @@ input{
 .toggle-password i {
     cursor: pointer;
     position: absolute;
-    top: 19.5em;
+    top:46%;
     right: 2em;
     transform: translateY(-20%);
     font-size: 5vw;
@@ -144,5 +144,6 @@ a {
     text-decoration: none;
     color:#C1FF72
 }
+
 
 
