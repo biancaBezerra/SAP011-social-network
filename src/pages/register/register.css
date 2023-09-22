@@ -7,3 +7,60 @@
     padding: 5vw;
     align-self: center; 
 }
+
+#registerH2{
+    padding: 0;
+    justify-content: center;
+    height: 5vh;
+    
+}
+
+label {
+    color: #C1FF72;
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 65vh;
+    padding: 8vw;
+    gap: 1vw;
+}
+#buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 5vw;
+    align-items: center;
+    gap: 10vw;
+}
+#buttonRegister{
+    background-color: #C1FF72;
+    color: #000;
+    border: none;
+    width: 70%;
+    height: 5vh;
+    font-size: 4vw;
+    border-radius: 2vw;
+
+}
+.loginRegister {
+    color: #fff;
+    background-color: #E13D93;
+    border: none;
+    border-radius: 3vw;
+    width: 50%;
+    height: 4vh;
+    
+}
+
+.toggle-password-register  {
+    cursor: pointer;
+    position: absolute;
+    top: 66.5%;
+    right: 11%;
+    transform: translateY(-20%);
+    font-size: 5vw;
+    color: #B54F92;
+  }
+

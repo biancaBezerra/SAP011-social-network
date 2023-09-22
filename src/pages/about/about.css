@@ -18,7 +18,7 @@ h3 {
 #textAbout {
     text-align: center;
     color: #fff;
-    padding: 1vw 2vw 10vw;
+    padding: 1vw 2vw 20vw;
     font-size: 4.5vw;
 }
 
@@ -26,7 +26,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6vw 10vw;
+    
 }
 
 #loginAbout {

@@ -9,10 +9,10 @@ export default () => {
     const registerTemplate = `
         <header>
             <img class= "logoMobileAbout" src="./images/logo_desktop.png" alt="logo_cashNet">
-            <h2 id = "register">Cadastre-se</h2>
+            <h2 id = "registerH2">Cadastre-se</h2>
         </header>
 
-        <form class= "register" id="register">
+        <form class= "register" id="registerForm">
             <label for="name">Nome</label>
             <input id="firstName" type="text">
             <span class='text-error' id='text-name-error'></span> 
@@ -26,11 +26,11 @@ export default () => {
             <input id="emailAdress" type="text" placeholder="user@cashnet.com" autocomplete="username"> 
             <span class='text-error' id='text-email-error'></span> 
             <label for="password">Senha</label>
-            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password"><i class="fas fa-eye"></i></span>
+            <input id="passwordInput" type="password" placeholder="digite sua senha" autocomplete="current-password"><span id="togglePassword" class="toggle-password-register"><i class="fas fa-eye"></i></span>
             <span class='text-error' id='text-password-error'></span> 
             <section id="buttons">
                 <button class='buttonRegister' id='buttonRegister' type='submit' >Criar Conta</button>
-                <button id="login">Voltar ao inicio</button>
+                <button class="loginRegister" id="login">Voltar ao inicio</button>
             </section>
         </form>
     `;
