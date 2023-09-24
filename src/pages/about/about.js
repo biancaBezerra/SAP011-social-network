@@ -2,7 +2,7 @@ export default () =>{
     const aboutContainer = document.createElement('div');
 
     const aboutTemplate = `
-        <header>
+        <header id = "headerAbout">
             <img class= "logoMobileAbout" src="./images/logo_desktop.png" alt="logo_cashNet">
         </header>
         

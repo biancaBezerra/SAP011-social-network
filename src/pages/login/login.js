@@ -86,9 +86,10 @@ export const getLoginPage = () => {
     container.classList.add('login-container');
 
     const template = `
-        <header>
+        <header id = "headerLogin">
             <h2>Trocando insights valiosos para se manter atualizado sobre as últimas tendências financeiras</h2>
             <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
+            <img id= "logoDesktopFeed" src="./images/logo_pgInicial.png" alt="logo_cashNet">
         </header>
 
         <section class ="loginContainer" id="loginContainer">

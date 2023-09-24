@@ -1,4 +1,4 @@
-.logoMobileAbout{
+.logoMobileRegister{
     width: 38vw;
     display: flex;
     align-items: center;
@@ -12,7 +12,6 @@
     padding: 0;
     justify-content: center;
     height: 5vh;
-    
 }
 
 label {
@@ -34,6 +33,7 @@ label {
     align-items: center;
     gap: 10vw;
 }
+
 #buttonRegister{
     background-color: #C1FF72;
     color: #000;
@@ -42,8 +42,8 @@ label {
     height: 5vh;
     font-size: 4vw;
     border-radius: 2vw;
-
 }
+
 .loginRegister {
     color: #fff;
     background-color: #E13D93;
@@ -51,7 +51,6 @@ label {
     border-radius: 3vw;
     width: 55%;
     height: 4vh;
-    
 }
 
 .toggle-password-register i {
@@ -62,5 +61,43 @@ label {
     transform: translateY(-20%);
     font-size: 5vw;
     color: #B54F92;
+}
+
+@media screen and (min-width: 768px) {
+
+    .logoMobileRegister{
+        width: 20vw;
+        height: 15%;
+        padding: 3vw;
+    }
+
+    #registerH2{
+        height: 10vh;
+        font-size: 2.5vw;
+    }
+
+    #registerForm {
+        gap: 0.5vw;
+    }
+
+    #buttonRegister{
+        width: 50%;
+        font-size: 2.8vw;
+        border-radius: 1vw;
+    }
+
+    .loginRegister {
+        border-radius: 2vw;
+        width: 40%;
+        height: 4vh;
+    }
+
+    .toggle-password-register i {
+        top: 23.2em;
+        right: 2.3em;
+        font-size: 3.7vw;
+    }
+
+
 }
 

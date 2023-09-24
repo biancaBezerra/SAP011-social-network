@@ -7,6 +7,11 @@
     font-family: 'Space Mono', monospace;
 }
 
+
+#logoDesktopFeed {
+    display: none;
+}
+
 h2 {
     text-align: right;
     display: flex;
@@ -142,7 +147,7 @@ footer p {
     color:#E13D93;
     padding: 0 9vw;
     border: none;
-    font-size: 3.1vw;
+    font-size: 3vw;
     align-items: center;
 }
 
@@ -153,7 +158,7 @@ footer p {
 
 @media screen and (min-width: 768px) {
 
-    header{
+    #headerLogin{
         width: 100vw;
         height: 20vh;
     }
@@ -169,16 +174,26 @@ footer p {
     }
 
     .loginContainer {
-        padding: 15vw;
-        gap: 5vw;
+        padding: 15vw 15vw 0;
+        gap: 4vw;
+    }
+
+    input{
+        font-size: 2.5vw;
     }
 
     .loginEmailPassword {   
         font-size: 3vw;
+        gap: 1vw;
+    }
+
+    .buttonLogin {
+        height: 5vh;
+        font-size: 3vw;
     }
 
     .toggle-password i {
-        top:50%;
+        top:49%;
         right: 3em;
         font-size: 4vw;
     }
@@ -191,7 +206,127 @@ footer p {
         font-size: 3vw;
     }
 
+    #register{
+        padding: 1vw;
+        gap: 2vw;
+    }
 
+    .button-new-account {
+        font-size: 3vw;
+        width: 30vw;
+    }
+    
+    #about {
+        padding: 1vw;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer p {
+        font-size: 2vw;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    #logoMobile {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    h2 {
+        font-size: 2vw;
+        width: 45vw;
+        height: 45vw;
+        padding: 2vw 2vw 2vw 0;
+    }
+
+    #logoDesktopFeed {
+        width: 40vw;
+        height: 50vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .loginContainer {
+        padding: 0;
+        width: 50vw;
+        height: 43vw;
+        gap: 0;
+    }
+    
+    .loginEmailPassword {
+        width: 40vw;
+        height: 22vw;
+        font-size: 2vw;
+        padding: 0;
+        gap: 0.3vw;
+        font-size: 1.5vw;
+    }
+
+    input{
+        width: 30vw;
+        border-radius: 1vw;
+        font-size: 1.2vw;
+    }
+
+    .buttonLogin {
+        width: 13vw;
+        height: 6vh;
+        font-size: 1.5vw;
+        border-radius: 1vw;
+    }
+    
+    #loginGoogle {
+        width:20vw;
+        height: 5vh;
+        padding-left: 2vw;
+        border-radius: 2vw;
+    }
+    
+    .button-login-google {
+        height: 5vh;
+        width: 15vw;
+        font-size: 1.2vw;
+    }
+
+    #googleLogo {
+        width: 3vw;
+        height: 5vh;
+        padding: 0.8vw;
+    }
+    
+    .button-new-account {
+        border-radius: 1.5vw;
+        width: 15vw;
+        height: 6vh;
+        font-size: 1.4vw;
+        font-weight: normal;
+    }
+
+    .about {
+        padding: 1vw;
+        border-radius: 2vw;
+    }
+
+    footer p {
+        font-size: 1vw;
+    }
+
+    .toggle-password i {
+        top:39.3%;
+        right: 28em;
+        font-size: 2.2vw;
+    }
 }
 
 
