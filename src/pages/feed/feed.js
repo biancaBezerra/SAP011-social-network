@@ -170,10 +170,10 @@ export default () =>{
             <section class='menu-bar'>
                 <nav class="nav-footer">
                     <ul class="ul-footer">
-                        <li class="li-footer"><a href="/#feed"><span class="material-symbols-outlined">House</span>Home</a></li>
-                        <li class="li-footer"><a href="/#about"><span class="material-symbols-outlined">info</span>Sobre</a></li>
-                        <li class="li-footer"><span class="material-symbols-outlined">keyboard_double_arrow_up</span>Topo</li>
-                        <li class="li-footer"><span id = "button-logout" class="material-symbols-outlined">logout</span>Exit</li>
+                        <li class="li-footer"><a href="/#feed"><span class="material-symbols-outlined">House</span></a></li>
+                        <li class="li-footer"><a href="/#about"><span class="material-symbols-outlined">info</span></a></li>
+                        <li class="li-footer" id = "topMobile"><span class="material-symbols-outlined">keyboard_double_arrow_up</span></li>
+                        <li class="li-footer"><span id = "button-logout" class="material-symbols-outlined">logout</span></li>
                     </ul>
                 </nav>
             </section>
@@ -235,6 +235,18 @@ export default () =>{
     });
 
 
+    const btnTop = feedContainer.querySelector('#topMobile');
+    // volta ao topo ao clicar no botão
+    btnTop.addEventListener('click', scrollToTop);
+    function scrollToTop (){
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
     return feedContainer;
         
 };
+
+

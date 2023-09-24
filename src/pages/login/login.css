@@ -71,7 +71,7 @@ input{
     transform: translateY(-20%);
     font-size: 5vw;
     color: #B54F92;
-  }
+}
 
 #loginGoogle {
     display: flex;
@@ -82,7 +82,6 @@ input{
     padding-left: 5vw;
     background-color: #374890;
     border-radius: 4vw;
-
 }
 
 .button-login-google {
@@ -171,9 +170,24 @@ footer p {
 
     .loginContainer {
         padding: 15vw;
+        gap: 5vw;
     }
 
     .loginEmailPassword {   
+        font-size: 3vw;
+    }
+
+    .toggle-password i {
+        top:50%;
+        right: 3em;
+        font-size: 4vw;
+    }
+
+    #loginGoogle {
+        width: 70%;
+    }
+
+    .button-login-google {
         font-size: 3vw;
     }
 
