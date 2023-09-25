@@ -5,6 +5,7 @@ import { togglePasswordVisibility } from "../../lib/passwordToggle";
 
 export default () => {
     const registerContainer = document.createElement('div');
+    registerContainer.classList.add('div-register');
     
     const registerTemplate = `
         <header>

@@ -5,7 +5,8 @@ html{
     padding: 0;
     height:100%;
     box-sizing: border-box;
-    background-image: linear-gradient(to right, #000, #1E1D74);
+    background-image: linear-gradient(to bottom, #af89fc, #54afb3);
+    background-attachment: fixed;
 }
 
 header {

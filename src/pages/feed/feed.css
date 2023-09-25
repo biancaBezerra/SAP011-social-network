@@ -1,3 +1,7 @@
+.menu-bar-header {
+    display: none;
+}
+
 #logoMobileFeed {
     width:85vw;
     height:25vh;
@@ -15,7 +19,7 @@ a {
 
 .ul-footer{
     width: 100%;
-    padding:5vw 3vw;
+    padding:3vw 1vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,12 +30,12 @@ a {
     background-color: #8496E1;
     font-weight: bold;
     bottom: 0;
+    justify-content: space-around;
 }
 
-.li-footer {
-    padding: 0 8.5vw;
+#buttons{
+    padding: 0;
 }
-
 
 .publish {
     display: flex;
@@ -119,5 +123,125 @@ a {
 .container-like, .container-edit {
     display: flex;
     flex-direction: row;
+}
+
+
+@media screen and (min-width: 768px) {
+    .menu-bar-header {
+        display: none;
+    }
+
+    #logoMobileFeed {
+        width:23vw;
+        height:20vh;
+        padding: 2vw;
+        align-self: center;
+    }
+
+    .welcome {
+        font-size: 2.5vw;
+    }
+
+    .ul-footer{
+        padding: 1vw;
+        bottom: 0;
+        justify-content: space-around;
+    }
+
+    #buttons{
+        font-size: 5vw;
+        padding: 2vw 0;
+    }
+
+    #button-logout{
+        font-size: 5vw;
+    }
+
+    #input-text {
+        width: 70%;
+        height: 10vh;
+        font-size: 2.5vw;
+    }
+
+    .publishButton {
+        padding: 2vw 15vw 5vw;
+    }
+
+    #button-publish {
+        width: 20vw;
+        border-radius: 1.5vw;
+        font-size: 2.5vw;
+    }
+
+    .name, .date {
+        font-size: 2vw;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-bar {
+        display: none;
+    }
+
+    .feed-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-bar-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .headerFeed {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 30%;
+        
+    }
+
+    #logoMobileFeed {
+        width:25vw;
+        height:70vh;
+        padding-top: 15vw;
+        align-self: center;
+    }
+
+    .ul-header, .li-header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 30vw;
+        height: 30vh;
+        padding: 0;
+    }
+    
+    #aboutFeed {
+        width: 16vw;
+        height: 6vh;
+        background-color: #C9E0F5;
+        border: none;
+        border-radius: 1vw;
+        font-size: 1.7vw;
+    }
+
+    .button-logout {
+        width: 15vw;
+        height: 5vh;
+        background-color: #B54F92;
+        border: none;
+        border-radius: 1vw;
+        font-size: 1.7vw;
+    }
+
 }
 

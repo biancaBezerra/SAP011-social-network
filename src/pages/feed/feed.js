@@ -60,7 +60,7 @@ function createPostContainer (post, feedElement) {
         <div class='text'>${post.text}</div>
         <div class='container-button'>
             <div class='container-like'>
-                <p id='button-like'><span class="material-symbols-outlined">favorite</span></p>
+                <p id='button-like'><span id = "like" class="material-symbols-outlined">favorite</span></p>
                 <p class='like' id='text-like-count'>${post.likes.length}</p>
             </div>
             <div class='container-edit'>
@@ -99,8 +99,8 @@ function createPostContainer (post, feedElement) {
 
                 likesArray.push(currentUser);
                 textLikeCount.innerHTML = likesArray.length;
-                runClick = false;
             }
+
         }
 
     });
@@ -162,23 +162,31 @@ export default () =>{
     feedContainer.classList.add ('feed-container');
 
     const content = `
-        <header>
+        <header class = "headerFeed">
             <img id= "logoMobileFeed" src="./images/logo_desktop.png" alt="logo_cashNet">
+
+            <section class='menu-bar-header'>
+                <nav class="nav-header">
+                    <ul class="ul-header">
+                        <li class="li-header"><button id= "aboutFeed"><a href="/#about">Sobre</a></button></li>
+                        <li class="li-header"><button class = "button-logout"</button>Sair</li>
+                    </ul>
+                </nav>
+            </section>
+
         </header>
         
         <section class='space-feed'>
             <section class='menu-bar'>
                 <nav class="nav-footer">
                     <ul class="ul-footer">
-                        <li class="li-footer"><a href="/#feed"><span class="material-symbols-outlined">House</span></a></li>
-                        <li class="li-footer"><a href="/#about"><span class="material-symbols-outlined">info</span></a></li>
-                        <li class="li-footer" id = "topMobile"><span class="material-symbols-outlined">keyboard_double_arrow_up</span></li>
+                        <li class="li-footer"><a href="/#feed"><span id = "buttons"  class="material-symbols-outlined">House</span></a></li>
+                        <li class="li-footer"><a href="/#about"><span id = "buttons"  class="material-symbols-outlined">info</span></a></li>
+                        <li class="li-footer" id = "topMobile"><span id = "buttons"  class="material-symbols-outlined">keyboard_double_arrow_up</span></li>
                         <li class="li-footer"><span id = "button-logout" class="material-symbols-outlined">logout</span></li>
                     </ul>
                 </nav>
             </section>
-
-            <div class='div-line'></div>
 
             <section class='publish'>
                 <span class ='welcome'>Olá, ${auth.currentUser.displayName}!</span>
@@ -187,7 +195,6 @@ export default () =>{
             <section class='publishButton'>
                 <button id='button-publish' class='button-publish'>Publicar</button>
             </section>
-            <div class='div-line'></div>
 
             <section id='feed'></section>
         </section>
@@ -222,18 +229,24 @@ export default () =>{
 
   
     const buttonLogOut = feedContainer.querySelector('#button-logout');
-    buttonLogOut.addEventListener('click', () => {
-      customDialog('Deseja realmente sair?', () => {
-        logOut()
-          .then(() => {
-            window.location.hash = '#login';
-          })
-          .catch(() => {
-            customAlert('Erro ao sair. Tente novamente.');
-          });
-      });
-    });
+    const buttonLogOutDesktop = feedContainer.querySelector('.button-logout')
+    const handleLogout = () => {
+        customDialog('Deseja realmente sair?', () => {
+          logOut()
+            .then(() => {
+              window.location.hash = '#login';
+            })
+            .catch(() => {
+              customAlert('Erro ao sair. Tente novamente.');
+            });
+        });
+      };
+      
+    buttonLogOut.addEventListener('click', handleLogout);
+    buttonLogOutDesktop.addEventListener('click', handleLogout);
 
+      
+      
 
     const btnTop = feedContainer.querySelector('#topMobile');
     // volta ao topo ao clicar no botão

@@ -71,7 +71,7 @@ export const likeCounter = async(postId, username) => updateDoc(doc(db,'posts', 
 });
 
 export const unlikeCounter = async (postId, username) => updateDoc(doc(db, 'posts', postId), {
-  likes: arrayRemove(username),
+    likes: arrayRemove(username),
 });
 
 export const editPost = async (postId, newText) => {

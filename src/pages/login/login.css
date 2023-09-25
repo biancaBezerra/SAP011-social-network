@@ -144,16 +144,16 @@ input{
 footer p {
     display: flex;
     flex-direction: row;
-    color:#E13D93;
-    padding: 0 9vw;
+    color:#000000;
+    padding: 0 5vw;
     border: none;
-    font-size: 3vw;
+    font-size: 3.2vw;
     align-items: center;
 }
 
 .footerA {
     text-decoration: none;
-    color:#C1FF72
+    color:#dd056a
 }
 
 @media screen and (min-width: 768px) {
@@ -328,6 +328,18 @@ footer p {
         font-size: 2.2vw;
     }
 }
+
+@media screen and (min-width: 1280px) {
+
+    .toggle-password i {
+        top: 12em;
+        right: 31em;
+        font-size: 2vw;
+    }
+}
+
+
+
 
 
 
