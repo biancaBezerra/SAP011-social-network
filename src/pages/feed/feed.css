@@ -47,7 +47,7 @@ a {
 }
 
 #input-text {
-    width: 90%;
+    width: 90vw;
     height: 12vh;
     background-color: #C9E0F5;
     padding: 2vw;
@@ -82,7 +82,7 @@ a {
     padding: 2vw 2vw 0 2vw;
     background-color: #a8b5e7;
     border-radius: 10px;
-    width: 90%;
+    width: 90vw;
     color: #000;
 }
 
@@ -138,10 +138,6 @@ a {
         align-self: center;
     }
 
-    .welcome {
-        font-size: 2.5vw;
-    }
-
     .ul-footer{
         padding: 1vw;
         bottom: 0;
@@ -191,6 +187,7 @@ a {
     .feed-container {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
     }
 
     .menu-bar-header {
@@ -198,14 +195,14 @@ a {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
     .headerFeed {
         display: flex;
         align-items: center;
-        height: 100%;
-        width: 30%;
-        
+        position: sticky;
+        top: 0;
     }
 
     #logoMobileFeed {
@@ -220,9 +217,10 @@ a {
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        width: 30vw;
-        height: 30vh;
+        width: 20vw;
+        height: 20vh;
         padding: 0;
+        padding-top: 2vw;
     }
     
     #aboutFeed {
@@ -243,5 +241,68 @@ a {
         font-size: 1.7vw;
     }
 
+    .space-feed {
+        width: 100%;
+    }
+
+    .publish {
+        padding: 5vw 5vw 0 5vw;
+    }
+
+    #input-text {
+        width: 70%;
+        height: 13vh;
+        font-size: 1vw;   
+        border-radius: 1vw;
+        padding: 1vw;
+    }
+
+    .publishButton {
+        padding: 0.5vw 14vw 3vw;
+    }
+    
+    #button-publish {
+        width: 8vw;
+        height: 5vh;
+        border-radius: 1vw;
+        font-size: 1vw;
+    }
+
+    .post {
+        width: 60vw;
+    }
+    
+    .name, .date {
+        font-size: 0.8vw;
+        border-radius: 0.5vw;
+    }
+    
+    .text {
+        border: 0.1vw solid #fff;
+        font-size: 15px;
+    }
+    
+    .container-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 2vw;
+        color: #000000;
+    }
+    
+    .container-like, .container-edit {
+        display: flex;
+        flex-direction: row;
+    }
+
 }
+
+@media screen and (min-width: 1280px) {
+
+    #logoMobileFeed {
+        width:20vw;
+        padding-top: 12vw;
+    }
+}
+
 

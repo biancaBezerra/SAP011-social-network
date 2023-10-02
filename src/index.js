@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.hash = '#login';
         break;
     }
-
   };
 
   window.addEventListener('hashchange', init);
@@ -54,12 +53,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 });
-
-
-
-
-
-
-
-
-

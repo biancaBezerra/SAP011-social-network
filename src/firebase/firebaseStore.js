@@ -1,37 +1,34 @@
 import {
-    collection,
-    addDoc,
-    getDocs,
-    updateDoc,
-    doc,
-    arrayUnion,
-    arrayRemove,
-    deleteDoc,
-  } from 'firebase/firestore';
-    
-  import { db } from './firebaseConfig';
-  
+  collection,
+  addDoc,
+  getDocs,
+  updateDoc,
+  doc,
+  arrayUnion,
+  arrayRemove,
+  deleteDoc,
+} from 'firebase/firestore';
+import { db } from './firebaseConfig';
 
-  export const userData = (
-    nameContent,
-    lastnameContent,
-    emailContent,
-    userContent,
-  ) => addDoc(collection(db, 'infos-add'), {
-    name: nameContent,
-    lastname: lastnameContent,
-    email: emailContent,
-    username: userContent,
-  });
-  
+export const userData = (
+  nameContent,
+  lastnameContent,
+  emailContent,
+  userContent,
+) => addDoc(collection(db, 'infos-add'), {
+  name: nameContent,
+  lastname: lastnameContent,
+  email: emailContent,
+  username: userContent,
+});
+
 // funções de postagens
-
-export const createPost  = (
+export const createPost = (
   date,
   username,
   text,
   uid,
-) => addDoc (collection(db, 'posts'), {
+) => addDoc(collection(db, 'posts'), {
   date,
   username,
   likes: [],
@@ -39,7 +36,7 @@ export const createPost  = (
   uid,
 });
 
-export const fetchPosts = async() => {
+export const fetchPosts = async () => {
   const postsCollection = collection(db, 'posts');
   const snapshot = await getDocs(postsCollection);
   const posts = [];
@@ -66,12 +63,12 @@ export const fetchPosts = async() => {
   return posts;
 };
 
-export const likeCounter = async(postId, username) => updateDoc(doc(db,'posts', postId), {
+export const likeCounter = async (postId, username) => updateDoc(doc(db, 'posts', postId), {
   likes: arrayUnion(username),
 });
 
 export const unlikeCounter = async (postId, username) => updateDoc(doc(db, 'posts', postId), {
-    likes: arrayRemove(username),
+  likes: arrayRemove(username),
 });
 
 export const editPost = async (postId, newText) => {
@@ -83,5 +80,3 @@ export const editPost = async (postId, newText) => {
 export const deletePost = async (postId) => {
   await deleteDoc(doc(db, 'posts', postId));
 };
-
-  

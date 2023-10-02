@@ -3,7 +3,7 @@
 html{
     margin: 0;
     padding: 0;
-    height:100%;
+    height:100vh;
     box-sizing: border-box;
     background-image: linear-gradient(to bottom, #af89fc, #54afb3);
     background-attachment: fixed;
@@ -94,15 +94,45 @@ main {
 }
 
 
-@media screen and (min-width: 768px) {
-
-
-}
-
 @media screen and (min-width: 1024px) {
 
     main {
         padding: 0;
+    }
+
+    .dialog {
+        border-radius: 1vw;
+        width: 25%;
+        top: 50%;
+        left: 50%;
+    }
+
+    .div-btn-dialog {
+        height: 2vw;
+    }
+
+    .div-btn-dialog button {
+        padding: 0;
+    }
+
+    .edit-dialog textarea {
+        height: 15vh;
+        border:0.1vw solid #000;
+        border-radius: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .edit-dialog {
+        border-radius: 1vw;
+        width: 30%;
+        padding: 2vw;
+    }
+
+    .customAlert {
+        bottom: 40%;
+        left: 35%;
+        height: 20%;
+        font-size: 1vw;
     }
 
 }
