@@ -1,479 +1,261 @@
-# Criando uma Rede Social
+# CashNet - Rede Social
 
 ## Índice
 
 * [1. Prefácio](#1-prefácio)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-* [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios de aceitação mínimos do
-  projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Guias, dicas e leituras
-  complementares](#8-guias-dicas-e-leituras-complementares)
+* [3. Histórias de Usuário](#3-histórias-de-usuários)
+* [4. Desenho de interface do usuário](#4-desenho-de-interface-do-usuário)
+* [5. Interface do projeto e objetivos alcançados](#5-interface-do-projeto-e-objetivos-alcançados)
+* [6. Testes unitários](#6-testes-unitários)
+* [7. Especificações técnicas](#7-especificações-técnicas)
+* [8. Implementações futuras](#8-implementações-futuras)
+* [9. Referências](#9-referências)
+* [10. Desenvolvedor](#10-desenvolvedor)
 
 ***
 
 ## 1. Prefácio
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
-
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
-Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
-uma rodada de financiamento com investidores, foi apresentada uma rede social
-para químicos onde os usuários podem publicar artigos a respeito de suas
-pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
-determinadas tags ou popularidade, mais recente ou mais comentado.
+Este projeto foi desenvolvido como parte do bootcamp da Laboratória e consiste em um projeto de nível 3 de um catálogo de projetos de complexidade crescente, associados a objetivos de aprendizagem concretos. Portanto, se trata de uma aplicação web, tendo como principal objetivo permitir ao usuário acessar o site da Rede Social, criar sua conta de acesso, fazer login, tanto com email e senha quanto com login do Google. Além disso o usuário poderá criar, editar e deletar o post criado, bem como dar _likes_ em seus posts e de outros usuários.
 
 ## 2. Resumo do projeto
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+O produto em questão é uma rede social desenvolvida para atender às necessidades daqueles que desejam aprender mais sobre mercado financeiro e compartilhar insights sobre novidades, atualizações e dicas financeiras,focada na interação e aprendizado sobre finanças e o mercado financeiro. Projetada para entusiastas, profissionais e estudantes, a plataforma proporciona discussões aprofundadas, troca de insights e atualização sobre tendências econômicas. Seu objetivo é preencher lacunas de conhecimento financeiro, reduzir o isolamento no mercado e simplificar estratégias complexas. Mais que uma rede, é um espaço colaborativo que potencializa o entendimento financeiro e favorece decisões informadas em um cenário financeiro dinâmico.
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+_Slogan_: "Conectando saberes financeiros"
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
-qual seja possível **ler e escrever dados**.
+## 3. Histórias de usuários
 
-## 3. Objetivos de aprendizagem
+As histórias de usuário definiram os requisitos principais para a criação da Rede Social CashNet. Cada história se concentra em uma funcionalidade específica, tornando a experiência do usuário mais completa e agradável.
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+### História de Usuário 1 - Gerenciar Conta
 
-### HTML
+“Como usuário, quero poder criar uma conta com email e senha e fazer login com uma conta do Google.”
 
-- [ ] **Uso de HTML semântico**
+#### Critérios de Aceitação:
+  * Posso criar uma conta com sucesso utilizando meu email e senha.
+  * Posso fazer login com sucesso utilizando meu email e senha.
+  * Posso fazer login com minha conta do Google.
 
-  <details><summary>Links</summary><p>
+#### Definição de Pronto (DoD - Definition of Done):
+A História de usuário _"Gerenciar Conta"_ estará pronta quando:
 
-  * [HTML semântico](https://curriculum.laboratoria.la/pt/topics/html/02-html5/02-semantic-html)
-  * [Semantics in HTML - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* O usuário pode criar uma conta de forma bem-sucedida utilizando seu email e senha, garantindo que o processo de cadastro funcione conforme o esperado, sem erros ou falhas.
+* O usuário é capaz de fazer login com sucesso na plataforma utilizando seu email e senha previamente cadastrados, assegurando que a autenticação ocorra corretamente.
+* O usuário pode efetuar login com êxito utilizando sua conta do Google, garantindo a integração efetiva e sem problemas com o sistema de autenticação do Google.
+*	A história de usuário passar por revisão e aprovação em teste unitário, assegurando que atende aos critérios de aceitação definidos.
+
+### História de Usuário 2 - Publicar conteúdo
+“Como usuário, quero poder criar e compartilhar posts contendo texto e links relevantes. Também quero poder editar ou excluir meus próprios posts”.
+
+#### Critérios de Aceitação:
+* Posso criar e publicar posts contendo texto ou links.
+* Posso editar meus próprios posts e salvar as alterações.
+* Posso excluir meus próprios posts após receber uma confirmação.
+
+#### Definição de Pronto (DoD - Definition of Done):
+A História de usuário _"Publicar conteúdo"_ estará pronta quando:
+
+* O usuário é capaz de criar e publicar posts na plataforma, incluindo a inserção de texto ou links relevantes, garantindo que a funcionalidade de criação e publicação funcione sem erros.
+* O usuário pode editar seus próprios posts de maneira eficaz, incluindo a capacidade de salvar as alterações feitas no conteúdo do post, assegurando que as modificações sejam refletidas adequadamente.
+* O usuário pode excluir seus próprios posts após receber uma confirmação, evitando exclusões acidentais e fornecendo uma camada adicional de segurança para a operação de exclusão.
+
+
+### História de Usuário 3 - Interagir com conteúdo
+"Como usuário, quero poder interagir com os posts de outras pessoas, dando likes e removendo likes que já dei, além de visualizar a contagem de likes. Também quero receber um aviso quando tentar publicar um post vazio.”
+
+#### Critérios de Aceitação:
+
+* Posso dar likes em posts de outros usuários.
+* Posso remover os likes que já dei em posts.
+* A contagem de likes é visível em todos os posts.
+* Ao tentar publicar um post vazio, recebo uma mensagem de erro apropriada.
+
+#### Definição de Pronto (DoD - Definition of Done):
+A História de usuário _"Interagir com conteúdo"_ estará pronta quando:
+* O usuário é capaz de dar likes em posts de outros usuários, demonstrando interação e apreciação pelo conteúdo publicado por seus pares.
+* O usuário pode remover os likes que já deu em posts, garantindo flexibilidade e controle sobre suas interações na plataforma.
+* A contagem de likes é exibida de forma visível em todos os posts, permitindo que os usuários vejam o número de likes recebidos por cada post.
+* Quando o usuário tenta publicar um post vazio, ele recebe uma mensagem de erro apropriada, alertando sobre a impossibilidade de postar conteúdo sem texto ou links.
+
+### História de Usuário 4 - Compartilhar conteúdos financeiros
+“Como usuário, quero poder compartilhar links de fóruns, blogs, dicas de economia e novidades sobre o mercado financeiro.”
+
+#### Critérios de Aceitação:
+* Posso compartilhar links de fóruns, blogs e sites financeiros.
+* Posso compartilhar dicas de economia.
+* Posso compartilhar novidades sobre o mercado financeiro.
+* Os posts compartilhados com links exibem corretamente as descrições e os links.
+
+#### Definição de Pronto (DoD - Definition of Done):
+A História de usuário _"Compartilhar conteúdos financeiros"_ estará pronta quando:
+* O usuário é capaz de compartilhar links de fóruns, blogs e sites financeiros, garantindo a funcionalidade adequada de compartilhamento de links na plataforma.
+* O usuário pode compartilhar dicas de economia de forma eficiente e funcional, assegurando que as dicas sejam publicadas corretamente.
+* O usuário é capaz de compartilhar novidades relevantes sobre o mercado financeiro, assegurando a funcionalidade correta de compartilhamento de notícias.
+* Os posts compartilhados com links exibem corretamente as descrições e os links, garantindo uma apresentação adequada e legível do conteúdo compartilhado.
+
+### História de Usuário 5 - Acesso multiplataforma
+"Como usuário, eu quero poder acessar o site da plataforma de qualquer dispositivo, como computadores, tablets e smartphones, para ter uma experiência agradável independentemente do dispositivo que estou usando".
+
+#### Critérios de Aceitação:
+* A plataforma deve ser responsiva, permitindo que se adapte automaticamente ao tamanho e resolução da tela do dispositivo.
+* Ao acessar o site a partir de um dispositivo, a interface e o layout devem se reorganizar de maneira adequada para garantir uma boa experiência ao usuário.
+* A navegação, elementos interativos e conteúdo da plataforma devem ser facilmente acessíveis e utilizáveis em diferentes dispositivos.
+* As funcionalidades da plataforma devem permanecer ativas em todos os dispositivos, garantindo que os usuários tenham acesso a todos os recursos.
+
+#### Definição de Pronto (DoD - Definition of Done):
+A História de usuário _"Acesso multiplataforma"_ estará pronta quando:
+* A plataforma se adapta automaticamente ao tamanho e resolução da tela do dispositivo utilizado, garantindo uma experiência consistente e amigável para o usuário, independentemente do dispositivo.
+* Ao acessar o site a partir de diferentes dispositivos, a interface e o layout se reorganizam de maneira adequada para garantir uma experiência positiva e coesa para o usuário.
+*A navegação, elementos interativos e conteúdo da plataforma são facilmente acessíveis e utilizáveis em diferentes dispositivos, atendendo às necessidades de usabilidade para uma variedade de tamanhos de tela.
+*Todas as funcionalidades da plataforma permanecem ativas e plenamente utilizáveis em todos os dispositivos, garantindo que os usuários tenham acesso a todos os recursos, independentemente do meio de acesso.
+
+## 4. Desenho de interface do usuário 
+
+O desenho da interface do usuário (UI) é uma etapa fundamental de extrema importância pois é o ponto de interação entre os usuários e o produto digital. Dessa forma, os protótipos desenvolvidos para esta aplicação web buscaram otimizar a experiência do usuário, tornando a sua interação intuitiva, eficiente e agradável. Portanto, os protótipos de baixa fidelidade e protótipos de alta fidelidade foram desenvolvidos utilizando como ferramenta de visual designer a plataforma online, Canva. 
+
+### Protótipo de baixa fidelidade (mobile)
+
+<h1 align = 'center'>
+  <img width = 220 alt = prototypeLowFidelityMobile title = prototypeLowFidelityMobile  src="./src/images/prototipo_de_baixa_fidelidade_mobile.png"/>
+</h1>
+
+### Protótipo de baixa fidelidade (desktop)
+
+<h1 align = 'center'>
+  <img alt = prototypeLowFidelityDesktop title = prototypeLowFidelityDesktop  src ="./src/images/prototipo_de_baixa_fidelidade_desktop.png"/>
+</h1>
+
+### Protótipo de alta fidelidade (mobile)
+
+<h1 align = 'center'>
+  <img width = 200  alt = prototypeHighFidelityMobile title = prototypeHighFidelityMobile src="./src/images/prototipo_de_alta_fidelidade_mobile.gif"/>
+</h1>
+
+### Protótipo de alta fidelidade (desktop)
+
+<h1 align = 'center'>
+  <img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop  src ="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
+</h1>
+
+### Testes de usabilidade
+
+Os testes de usabilidade foram realizados com o intuito de fazer uma análise sobre a interação do usuário com a aplicação desenvolvida. Buscamos, portanto, entender se o produto criado era fácil de usar, agradável visualmente e capazes de atender às necessidades e expectativas dos usuários, resultando em uma experiência geral satisfatória. Dessa forma, desenvolvemos um protótipo de alta fidelidade, no qual, o usuário pode interagir e ao final preencher um formulário com perguntas que nos informavam sobre sua experiência de usuário com a aplicação. Como sugestões de melhorias, indicadas pelos usuários, vamos citar duas:
+* Aplicar melhoramentos na paleta de cores para melhor contraste dos elementos de primeiro e segundo plano, melhorando assim a visuação da pagina web. 
+* Alterar o layout da visualização dos alertas tela enquanto o usuário faz a edição de um post ou sua exclusão.
+
+### Entrevista com usuário
+
+A entrevista com usuário é fundamental para o projeto, pois visa entender as preferências dos usuários em relação a uma plataforma de rede social voltada para o mercado financeiro. As perguntas visam coletar informações sobre o que atrai os usuários, quais funcionalidades são importantes para eles, como valorizam a interação social, a segurança e facilidade de uso, além de identificar o tipo de conteúdo financeiro desejado. Essas respostas ajudaram a adaptar a plataforma para atender às necessidades e expectativas dos usuários, resultando em uma experiência mais satisfatória.
+
+#### Perguntas e respostas da entrevista (Número de entrevistados: 2)
+
+<details><summary>O que te atraiu para nossa plataforma de rede social?</summary><p>
+
+* Resposta 1: Oportunidade de adquirir conhecimento e networking
+* Resposta 2: A ideia de aprender sobre finanças.
 </p></details>
 
-### CSS
+<details><summary>Quais funcionalidades específicas você espera encontrar na plataforma que sejam importantes para sua experiência?</summary><p>
 
-- [ ] **Uso de seletores de CSS**
-
-  <details><summary>Links</summary><p>
-
-  * [Intro a CSS](https://curriculum.laboratoria.la/pt/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/pt_BR/docs/Web/CSS/CSS_Selectors)
+* Resposta 1: Experiencias reais, oportunidade de negócios e dicas de mercados e materiais didáticos.
+* Resposta 2: Dicas sobre gestão financeira do dia-a-dia.
 </p></details>
 
-- [ ] **Modelo de caixa (box model): borda, margem, preenchimento**
+<details><summary>Quão importante é para você a capacidade de compartilhar e discutir novidades do mercado financeiro na plataforma?</summary><p>
 
-  <details><summary>Links</summary><p>
-
-  * [Modelo de Caixa e Display](https://curriculum.laboratoria.la/pt/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
+* Resposta 1: É uma oportunidade impar de conhecer novas pessoas com o mesmo foco.
+* Resposta 2: Muito importante, posso trocar e adquirir conhecimento.
 </p></details>
 
-- [ ] **Uso de flexbox em CSS**
+<details><summary>Como você vê a importância de poder dar likes em posts e ter uma contagem de likes visível?</summary><p>
 
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#pt-br)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+* Resposta 1: A importância que traz é o engajamento de um assunto específico.
+* Resposta 2: Acho importante para saber como o post está impactando as pessoas.
 </p></details>
 
-- [ ] **Uso de CSS Grid Layout**
+<details><summary>Você se preocupa com a segurança e a facilidade de uso da plataforma, como a opção de fazer login com sua conta do Google e a recuperação de senha?</summary><p>
 
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+* Resposta 1: Sim, pois há a preocupação com a privacidade dos meus dados.
+* Resposta 2: Sim, segurança e facilidade de login são fatores determinantes.
 </p></details>
 
-### Web APIs
+<details><summary>Que tipo de conteúdo financeiro você mais gostaria de ver e compartilhar na plataforma?</summary><p>
 
-- [ ] **Uso de seletores de DOM**
-
-  <details><summary>Links</summary><p>
-
-  * [Modificando o DOM](https://curriculum.laboratoria.la/pt/topics/browser/02-dom/03-1-dom-methods-selection)
-  * [Introdução ao DOM - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
-  * [Locating DOM elements using selectors - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
+* Resposta 1: Investimentos em potencial.
+* Resposta 2: Dicas sobre como controlar as finanças do dia-a-dia e dicas sobre investimentos rentáveis e de baixo risco.
 </p></details>
 
-- [ ] **Manipulação de eventos de DOM (listeners, propagação, delegação)**
+<details><summary>Como você enxerga o papel da interação social na plataforma?</summary><p>
 
-  <details><summary>Links</summary><p>
-
-  * [Introdução a eventos - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/removeEventListener)
-  * [Objeto Event](https://developer.mozilla.org/pt-BR/docs/Web/API/Event)
+* Resposta 1: Vejo como positiva a aproximação de pessoas com conhecimento diversos voltado ao mesmo objetivo.
+* Resposta 2: Acho importante essa troca de informações visto que esse assunto, apesar de importantíssimo, não é aprendido na escola, por exemplo. Ter esse espaço é muito legal.
 </p></details>
 
-- [ ] **Manipulação dinâmica de DOM**
+<details><summary>Há alguma outra funcionalidade ou recurso que você considera importante para uma experiência ideal na plataforma?</summary><p>
 
-  <details><summary>Links</summary><p>
-
-  * [Introdução ao DOM](https://developer.mozilla.org/pt-BR/docs/DOM/Referencia_do_DOM/Introdu%C3%A7%C3%A3o)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Node/textContent)
+* Resposta 1: Uma funcionalidade importante é a de denuncia de posts golpistas.
+* Resposta 2:  Acho que não. Todas as funcionalidades já estão englobadas no escopo.
 </p></details>
 
-- [ ] **Routing (History API, evento hashchange, window.location)**
+## 5. Interface do projeto e objetivos alcançados
 
-  <details><summary>Links</summary><p>
+O CashNet é um projeto de rede social voltado para a interação, aprendizado e compartilhamento de conhecimentos relacionados a finanças e o mercado financeiro. Projetado para atender tanto a entusiastas quanto a profissionais experientes do setor financeiro, o CashNet oferece uma plataforma colaborativa que permite aos usuários se envolverem em discussões aprofundadas sobre temas financeiros, trocar insights valiosos e se manterem atualizados sobre as últimas tendências econômicas.
 
-  * [Manipulando o histórico do navegador - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API)
-</p></details>
+Na interface da aplicação, os usuários podem criar uma conta com email e senha, além de realizar login usando uma conta do Google, proporcionando flexibilidade e segurança no acesso à plataforma. Também podem criar e compartilhar posts contendo texto e links relevantes, editando e excluindo seus próprios posts conforme desejado, além de poderem interagir com os posts de outras pessoas, dando e removendo likes, visualizando a contagem de likes, e recebendo alertas ao tentar publicar um post vazio. A plataforma é responsiva, adaptando-se automaticamente a diferentes dispositivos, como computadores, tablets e smartphones, proporcionando uma experiência agradável e funcional em qualquer dispositivo utilizado.
 
-### JavaScript
+### Objetivos gerais alcançados no projeto:
 
-- [ ] **Arrays (arranjos)**
+[✔] Permitir aos usuários fazer login com e-mail e senha - Firebase;
 
-  <details><summary>Links</summary><p>
+[✔] Permitir aos usuários fazer login com Google - Firebase;
 
-  * [Arranjos](https://curriculum.laboratoria.la/pt/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org//pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
+[✔] Permitir aos usuários a criação de um novo cadastro com e-mail e senha - Firebase;
 
-- [ ] **Objetos (key, value)**
+[✔] Permitir ao usuário interagir dentro da aplicação, curtindo posts, compartilhando postos, editando seu post post e podendo até mesmo excluir - Firebase;
 
-  <details><summary>Links</summary><p>
+[✔] Ser responsivo (_mobile first_), ou seja, deve ser visualizada sem problemas a partir de diversos tamanhos de tela: celulares, tablets, notebooks, etc.
 
-  * [Objetos em JavaScript](https://curriculum.laboratoria.la/pt/topics/javascript/05-objects/01-objects)
-</p></details>
+[✔] Ser um SPA;
 
-- [ ] **Diferenciar entre tipos de dados primitivos e não primitivos**
+[✔] Que a interface siga os fundamentos de visual design;
 
-- [ ] **Variáveis (declaração, atribuição, escopo)**
+[✔] Interação com banco de dados externos - Firebase;
 
-  <details><summary>Links</summary><p>
+[✔] Testes unitários cobrirem um mínimo de 70% de statements, functions, lines e branches;
 
-  * [Valores, tipos de dados e operadores](https://curriculum.laboratoria.la/pt/topics/javascript/01-basics/01-values-variables-and-types)
-  * [Variáveis](https://curriculum.laboratoria.la/pt/topics/javascript/01-basics/02-variables)
-</p></details>
+[✔] Uso de Mocks e espiões.
 
-- [ ] **Uso de condicionais (if-else, switch, operador ternário, lógica booleana)**
+## 6. Teste unitários
 
-  <details><summary>Links</summary><p>
+Para este projeto foram desenvolvidos dois _boilerplate_ que inclui testes unitários do Firebase Authentication e Firebase Firestore. Assim, foram escritos testes unitários para as funções encarregadas de _criar conta_, _fazer login_, _criar um post_, _curtir_, _descurtir_, _editar_, _excluir_ o post, assim como _ordenar_ os post em ordem decrescente.
 
-  * [Estruturas condicionais e repetitivas](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisões no seu código — condicionais - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
+Os testes unitários realizados obtiveram uma cobertura de 100% de _statements_ (_sentenças_), _functions_ (_funções_), _lines_ (_linhas_), e _branches_ (_ramos_) dos arquivos `src/firebase/firebaseAuth.js`, `src/firebase/firebaseConfig.js` e, `src/firebase/firebaseStore.js`, no qual contém as funções referentes a esse projeto.
 
-- [ ] **Uso de laços (while, for, for..of)**
+<h1 align = 'center'>
+  <img alt = testesUnitáriosSocialNetwork title = testesUnitáriosSocialNetwork  src ="./src/images/testesUnitariosCashNet.png"/>
+</h1>
 
-  <details><summary>Links</summary><p>
+## 7. Especificações  técnicas
 
-  * [Laços (Loops)](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/02-loops)
-  * [Laços e iterações - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
+O projeto foi desenvolvido utilizando como ferramentas e tecnologias:
 
-- [ ] **Funções (params, args, return)**
+* HTML5
+* CSS3
+* JavaScript
+* Visual Studio Code
+* Node.js
+* GitBash
+* GitHub
+* Firebase
+* Vite
+* Jest
+* Canva
 
-  <details><summary>Links</summary><p>
+## 8. Implementações futuras
 
-  * [Funções (controle de fluxo)](https://curriculum.laboratoria.la/pt/topics/javascript/02-flow-control/03-functions)
-  * [Funções clássicas](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/pt/topics/javascript/03-functions/02-arrow)
-  * [Funções — blocos reutilizáveis de código - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
-- [ ] **Testes unitários (unit tests)**
-
-  <details><summary>Links</summary><p>
-
-  * [Introdução ao Jest - Documentação oficial](https://jestjs.io/docs/pt-BR/getting-started)
-</p></details>
-
-- [ ] **Testes assíncronos**
-
-  <details><summary>Links</summary><p>
-
-  * [Testando Código Assíncrono - Documentação oficial](https://jestjs.io/docs/pt-BR/asynchronous)
-</p></details>
-
-- [ ] **Uso de mocks e espiões**
-
-  <details><summary>Links</summary><p>
-
-  * [Simulações Manuais - Documentação oficial](https://jestjs.io/docs/pt-BR/manual-mocks)
-</p></details>
-
-- [ ] **Módulos de ECMAScript (ES modules)**
-
-  <details><summary>Links</summary><p>
-
-  * [import - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descritivos (Nomenclatura e Semântica)**
-
-- [ ] **Diferença entre expressões (expressions) e declarações (statements)**
-
-- [ ] **Callbacks**
-
-  <details><summary>Links</summary><p>
-
-  * [Função Callback - MDN](https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function)
-</p></details>
-
-- [ ] **Promessas**
-
-  <details><summary>Links</summary><p>
-
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (em inglês)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
-
-### Controle de Versões (Git e GitHub)
-
-- [ ] **Git: Instalação e configuração**
-
-- [ ] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
-
-- [ ] **GitHub: Implantação com GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Site oficial do GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
-
-- [ ] **GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)**
-
-### Centrado no usuário
-
-- [ ] **Desenhar e desenvolver um produto ou serviço colocando as usuárias no centro**
-
-### Design de produto
-
-- [ ] **Criar protótipos para obter feedback e iterar**
-
-- [ ] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
-
-### Pesquisa
-
-- [ ] **Planejar e executar testes de usabilidade**
-
-### Firebase
-
-- [ ] **Firebase Auth**
-
-  <details><summary>Links</summary><p>
-
-  * [Primeiros passos com o Firebase Authentication em sites - Documentação oficial](https://firebase.google.com/docs/auth/web/start?hl=pt-BR)
-  * [Gerenciar usuários no Firebase (onAuthStateChanged) - Documentação oficial](https://firebase.google.com/docs/auth/web/manage-users?hl=pt-BR)
-</p></details>
-
-- [ ] **Firestore**
-
-  <details><summary>Links</summary><p>
-
-  * [Firestore - Documentação oficial](https://firebase.google.com/docs/firestore?hl=pt-BR)
-  * [Regras de segurança do Firebase - Documentação oficial](https://firebase.google.com/docs/rules?hl=pt-BR)
-  * [Receber atualizações em tempo real com o Cloud Firestore - Documentação oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=pt-BR)
-</p></details>
-
-## 4. Considerações gerais
-
-* Este projeto deve ser desenvolvido em trios.
-
-* O intervalo de tempo estimado para concluir o projeto é de 4 a 5 Sprints.
-
-* A lógica do projeto deve estar implementada completamente em JavaScript
-  (ES6+), HTML e CSS :smiley:. Para este projeto **não está permitido** o uso de
-  _frameworks_ ou bibliotecas de CSS e JS.
-
-* A divisão e organização do trabalho deve permitir, sem exceção, que **cada
-  integrante** da equipe pratique a aprendizagem de tudo que está envolvido em
-  **cada história**. _Não dividam o trabalho como em uma fábrica._
-
-* Está avançando em seus projetos com alguma fluidez e sem grandes problemas?
-  Seja generosa com suas parceiras, deixe-as aprender e praticar sem restrições,
-  mesmo que demore um pouco mais. Aproveite para _mentorá-las_, para fazer _pair
-  programming_. Uma das melhores formas de aprender é explicar verbalmente.
-
-* Está sentindo dificuldade e para você é mais difícil de avançar? Não fique com
-  as partes "fáceis" do projeto. Converse, negocie, busque sua oportunidade de
-  praticar e aprender o que é mais difícil para você.
-
-* Vocês apenas poderão trabalhar em uma história por vez. Não avancem para a
-  próxima sem completar a anterior. As histórias apenas são concluídas quando se
-  completam **todos** os critérios de aceitação + **toda** sua definição de
-  pronto.
-
-Para começar, você precisará criar um _fork_ e _clone_ deste repositório.
-
-## 5. Critérios de aceitação mínimos do projeto
-
-### 5.1 Boilerplate
-
-Este projeto não inclui um _boilerplate_, portanto você terá que definir a
-estrutura de pastas e escrever seus próprios testes unitários (_tests_). Para
-isso, você pode guiar-se por meio de projetos anteriores.
-Este projeto não inclui um _boilerplate_ completo, apenas alguns arquivos de
-configuração básica, então você terá que definir a estrutura de pastas e
-escrever seus próprios testes de unidade (_tests_). Para isso, você pode ser guiado
-por projetos anteriores e/ou organizar os arquivos seguindo uma estrutura de
-[Model-View-Controller](https://developer.mozilla.org/es/docs/Glossary/MVC).
-
-Neste projeto vamos utilizar uma ferramenta chamada
-[Vite](https://es.vitejs.dev/) para empacotar nossos módulos e iniciar
-o servidor de desenvolvimento, que disponibiliza nossos arquivos usando
-a estratégia `Hot Module Replacement`
-[(HMR)](https://en.vitejs.dev/guide/features.html#hot-module-replacement),
-isso significa que quando você faz alterações em arquivos que estão sendo
-hosteados, o navegador será atualizado automaticamente sem a necessidade
-de fazê-lo manualmente para recarregar todo o site. Você deve ter um
-cuidado especial para não ter nenhuma _dependência circular_ em seu código já
-[que pode causar problemas com o HMR](https://vitejs.dev/guide/troubleshooting.html#full-refresh-occurs-instead-of-hmr).
-(O `eslint-plugin-import` tem a regra
-[import/no-cycle](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md)
-que notificará se os tiver.)
-
-### 5.2 Definição do produto
-
-No `README.md`, conte-nos brevemente como você mapeou as necessidades dos seus
-usuários e como você chegou à definição final do seu produto. É importante que
-detalhe:
-
-* Quem são os principais usuários do produto.
-* Qual problema o produto resolve/para que ele serve para esses usuários.
-
-### 5.3 Histórias de usuário
-
-Depois de entender as necessidades de seus usuários, escreva as Histórias de
-Usuário. Elas representam tudo o que ele precisa fazer/ver na Rede Social.
-Cada uma de suas histórias de usuário deve possuir:
-
-* **Critérios de aceitação:** tudo o que deve acontecer para satisfazer as
-  necessidades do usuário.
-
-* **Definição de pronto:** todos os aspectos técnicos que devem ser atendidos
-  para que, como equipe, saibam que essa história está finalizada e pronta para
-  ser publicada. **Todas** suas histórias de usuário (com exceções), devem
-  incluir esses aspectos em sua definição de pronto (além de tudo o que precisa
-  adicionar):
-
-  - Ser uma SPA.
-  - Ser _responsivo_.
-  - Receber _code review_ de pelo menos uma parceira de outra equipe.
-  - Fazer _tests_ unitários.
-  - Fazer testes manuais buscando erros e imperfeições simples.
-  - Fazer testes de usabilidade e incorporar o _feedback_ dos usuários como
-    melhorias.
-  - Fazer deploy do aplicativo e marcar a versão (git tag).
-
-### 5.4 Desenho da Interface de Usuário (protótipo de baixa fidelidade)
-
-Você deve definir qual será o fluxo que o usuário seguirá dentro do seu
-aplicativo e, com isso, criar a interface do usuário (UI) que siga este fluxo.
-
-### 5.5 Responsivo
-
-Deve funcionar bem em dispositivos de tela grande (computadores, laptops etc.) e
-pequena (_tablets_, telefones celulares etc.). Sugerimos seguir a técnica
-_`mobile first`_ (mais detalhes sobre essa técnica ao final).
-
-### 5.6 Considerações sobre o comportamento da Interface do Usuário (UI)
-
-Essas considerações ajudarão você a escrever as definições de pronto de sua
-H.U.:
-
-#### Criação e login de conta de usuário
-
-* _Login_ com Firebase:
-  - Para o _login_ e postagens na timeline, você pode usar o
-    [Firebase](https://firebase.google.com/products/database/)
-  - O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de
-    e-mail e senha e também com uma conta do Google.
-* Validações:
-  - Somente usuários com contas válidas têm acesso permitido.
-  - Não haver usuários repetidos.
-  - A conta do usuário deve ser um email válido.
-  - O que o usuário digita no campo de senha (_input_) deve ser secreto.
-* Comportamento:
-  - Quando o formulário de registro ou login é enviado, ele deve ser validado.
-  - Se houver erros, mensagens descritivas devem ser exibidas para ajudar o
-    usuário.
-
-#### Timeline/linha do tempo
-
-* Validações:
-  - Ao publicar, deve ser validado se há conteúdo no _input_.
-* Comportamento:
-  - Ao recarregar o aplicativo, é necessário verificar se o usuário está
-    _logado_ antes de exibir o conteúdo,
-  - Conseguir publicar um _post_.
-  - Poder dar e remover _likes_ em uma publicação. Máximo de um por usuário.
-  - Visualizar contagem de _likes_.
-  - Poder excluir uma postagem específica.
-  - Solicitar confirmação antes de excluir um _post_.
-  - Ao clicar em editar um _post_, você deve alterar o texto para um _input_ que
-    permite editar o texto e salvar as alterações.
-  - Ao salvar as alterações, você deve voltar ao texto normal, mas com a
-    informação editada.
-  - Ao recarregar a página, poder ver os textos editados.
-
-### 5.7 Considerações técnicas sobre front-end
-
-* Separar a manipulação do DOM da lógica (separação de responsabilidades).
-* Ter várias telas. Para isso, seu aplicativo deve ser um [Single Page
-  Application
-  (SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-* Alterar e persistir dados. Os dados que você adiciona ou modifica devem
-  persistir por todo o aplicativo. Recomendamos que você use o
-  [Firebase](https://firebase.google.com/) para isso também.
-
-#### Testes unitários
-
-* Lembre-se de que não há _setup_ de **testes** definido, isso dependerá da
-  estrutura do seu projeto. Você não deve esquecer de pensar sobre os testes.
-  Eles podem ajudar a definir a estrutura e sua lógica.
-
-* Os testes de unidade devem cobrir no mínimo 70% de _statements_, _functions_,
-  _lines_ e _branches_.
-
-### 5.8 Considerações técnicas UX
-
-* Faça pelo menos 2 entrevistas com os usuários.
-* Faça um protótipo de baixa fidelidade.
-* Verifique se a implementação do código segue as diretrizes do protótipo.
-* Faça sessões de teste de usabilidade com o produto em HTML.
-
-## 6. Hacker Edition
-
-As seções chamadas _Hacker Edition_ são **opcionais**. Se **você terminou** e
-cumpriu todos os requisitos acima e sobrou tempo, tente concluí-las. Dessa
-forma, você pode aprofundar e/ou exercitar mais os objetivos de aprendizagem do
-projeto.
+ _Hacker Edition_
 
 * Criar posts com imagens.
 * Procurar usuários, adicionar e excluir "amigos".
@@ -483,72 +265,25 @@ projeto.
 * Permitir comentar ou responder a uma postagem.
 * Editar perfil.
 
-## 7. Entrega
+## 9. Referências
 
-O projeto será entregue subindo seu código no GitHub (`commit` /`push`) e a
-interface será exibida usando páginas do GitHub ou outro serviço de hospedagem
-(Firebase, Netlify, Vercel, etc) que você pode ter encontrado pelo caminho.
-Verifica a [Documentação Vite](https://vitejs.dev/guide/static-deploy.html)
-para orientá-lo sobre isso.
+#### Imgens:
 
-***
+* Logo CashNet - [Canva](https://www.canva.com/design/DAFtHxhR-1E/yGKiovQlIJwp6HSSRgx3Aw/edit)
+* Logo Desktop Pagina Inicial - [Vecteezy](https://pt.vecteezy.com/fotos-gratis)
 
-## 8. Guias, dicas e leituras complementares
+#### Ícones:
 
-Participe do canal do Slack
-[#project-social-network](https://claseslaboratoria.slack.com/archives/C03SE63GFJQ)
-para conversar e pedir ajuda no projeto.
+* Menu - [Google ícons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:menu:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=menu)
+* House - [Google ícons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:house:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=home)
+* Info - [Google ícons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:info:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=Info)
+* Keyboard_double_arrow_up - [Google ícons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:keyboard_double_arrow_up:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=Keyboard_double_arrow_up)
+* Google logo - [Logo PNG](https://logopng.com.br/logos/google-37.png)
 
-### Mobile first
+#### Fontes:
 
-O conceito de [_mobile
-first_](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/) faz
-referência a um processo de desenho e desenvolvimento que parte de como se vê e
-como funciona uma aplicação primeiro em um dispositivo móvel e mais adiante se
-analisa como adaptar a aplicação à telas progressivamente maiores. Esta é uma
-contraposição ao modelo tradicional, no qual primeiro se desenha os websites (ou
-webapps) para desktops e depois os adaptam para telas menores.
+* Exo 2 - [Google Fonts](https://fonts.google.com/specimen/Exo+2)
 
-A motivação aqui é se assegurar que desde o começo sejam desenhadas telas
-_responsivas_. Dessa forma, começamos com a aparência e o comportamento do
-aplicativo em uma tela e ambiente móvel.
+## 10. Desenvolvedor
 
-### Múltiplas telas
-
-Em projetos anteriores, nossas aplicações eram compostas de apenas uma tela
-_principal_ (uma só _página_). Neste projeto, precisaremos dividir nossa
-interface em várias _views_ ou _pages_ e oferecer uma maneira de navegar entre
-essas telas. Esse problema pode ser resolvido de várias maneiras: com arquivos
-HTML independentes (cada um com seu próprio URL) e links tradicionais; mantendo
-na memória e renderizando condicionalmente (sem atualizar a página);
-[manipulando o histórico do
-navegador](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API)
-com
-[`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-Neste projeto, convidamos você a explorar opções e decidir sobre uma opção de
-implementação.
-
-### Gravação de dados
-
-Nos projetos anteriores, consumimos dados, mas ainda não tínhamos escrito dados
-(salvar alterações, criar dados, excluir, etc). Neste projeto, você precisará
-criar (salvar) novos dados, além de ler, atualizar e modificar os dados
-existentes. Esses dados podem ser salvos remotamente usando o
-[Firebase](https://firebase.google.com/).
-
-Para usar o Firebase, você deve criar um projeto no console do Firebase e
-instale a dependência `firebase` usando `npm`.
-Leia [instruções passo a passo aqui](https://firebase.google.com/docs/web/setup).
-
-Outras:
-
-* [Mobile
-  First](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman
-  Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-* [Flexbox - CSS
-  Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [Módulos:
-  Export](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-* [Módulos:
-  Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
+* Made with 💛 by BIANCA BEZERRA 💻 [See my LinkedIn](https://www.linkedin.com/in/bianca-bezerra-63447b160/)
