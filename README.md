@@ -129,15 +129,15 @@ O desenho da interface do usuário (UI) é uma etapa fundamental de extrema impo
 
 ### Protótipo de alta fidelidade (mobile)
 
-<h1 align = 'center'>
-  <img width = 200  alt = prototypeHighFidelityMobile title = prototypeHighFidelityMobile src="https://raw.githubusercontent.com/biancaBezerra/SAP011-social-network/master/src/images/prototipo_de_alta_fidelidade_mobile.gif"/>
-</h1>
+
+<img width = 200  alt = prototypeHighFidelityMobile title = prototypeHighFidelityMobile src="./src/images/prototipo_de_alta_fidelidade_mobile.gif"/>
+
 
 ### Protótipo de alta fidelidade (desktop)
 
-<h1 align = 'center'>
-  <img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop src="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
-</h1>
+
+<img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop src="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
+
 
 ### Testes de usabilidade
 
