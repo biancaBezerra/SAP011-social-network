@@ -129,12 +129,11 @@ O desenho da interface do usuário (UI) é uma etapa fundamental de extrema impo
 
 ### Protótipo de alta fidelidade (mobile)
 
-
-<img width = 200  alt = prototypeHighFidelityMobile title = prototypeHighFidelityMobile src="./src/images/prototipo_de_alta_fidelidade_mobile.gif"/>
-
+<p align="center">
+  <img width = 200  alt = prototypeHighFidelityMobile title = prototypeHighFidelityMobile src="./src/images/prototipo_de_alta_fidelidade_mobile.gif"/>
+</p>
 
 ### Protótipo de alta fidelidade (desktop)
-
 
 <img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop src="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
 
