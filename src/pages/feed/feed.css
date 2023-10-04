@@ -68,6 +68,7 @@ a {
     border: none;
     border-radius: 2vw;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #feed {
@@ -112,6 +113,10 @@ a {
     padding: 5px;
 }
 
+.custom-link {
+  color: #390f7c; /* Cor do link personalizada (vermelho) */
+}
+
 .container-button {
     display: flex;
     flex-direction: row;
@@ -123,6 +128,7 @@ a {
 .container-like, .container-edit {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 

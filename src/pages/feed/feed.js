@@ -51,12 +51,18 @@ function createPostContainer(post, feedElement) {
   const deleteButton = post.uid === auth.currentUser.uid
     ? '<p class="button-delete"id="button-delete"><span class="material-symbols-outlined">delete</span></p>' : '';
 
+  // função para identificar links dentro do input de texto
+  function parseContent(text) {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, (url) => `<a href="${url}" target="_blank" class="custom-link">${url}</a>`);
+  }
+
   const content = `
       <div class='infos'>
           <p class='name'>${post.username}</p>
           <p class='date'>${formattedDate}</p>
       </div>
-      <div class='text'>${post.text}</div>
+      <div class='text'>${parseContent(post.text)}</div>
       <div class='container-button'>
           <div class='container-like'>
               <p id='button-like'><span id = "like" class="material-symbols-outlined">favorite</span></p>
@@ -67,7 +73,7 @@ function createPostContainer(post, feedElement) {
               ${deleteButton}
           </div>
       </div>
-      `;
+    `;
 
   postElement.innerHTML = content;
 
@@ -98,6 +104,7 @@ function createPostContainer(post, feedElement) {
 
         likesArray.push(currentUser);
         textLikeCount.innerHTML = likesArray.length;
+        runClick = false;
       }
     }
   });
