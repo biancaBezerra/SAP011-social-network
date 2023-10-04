@@ -118,7 +118,7 @@ O desenho da interface do usuário (UI) é uma etapa fundamental de extrema impo
 ### Protótipo de baixa fidelidade (mobile)
 
 <h1 align = 'center'>
-  <img width = 250 alt = prototypeLowFidelityMobile title = prototypeLowFidelityMobile  src="./src/images/prototipo_de_baixa_fidelidade_mobile.png"/>
+  <img alt = prototypeLowFidelityMobile title = prototypeLowFidelityMobile  src="./src/images/prototipo_de_baixa_fidelidade_mobile.png"/>
 </h1>
 
 ### Protótipo de baixa fidelidade (desktop)
