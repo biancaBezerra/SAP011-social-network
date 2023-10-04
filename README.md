@@ -136,7 +136,7 @@ O desenho da interface do usuário (UI) é uma etapa fundamental de extrema impo
 ### Protótipo de alta fidelidade (desktop)
 
 <h1 align = 'center'>
-  <img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop  src ="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
+  <img alt = prototypeHighFidelityDesktop title = prototypeHighFidelityDesktop src="./src/images/prototipo_de_alta_fidelidade_desktop.gif"/>
 </h1>
 
 ### Testes de usabilidade
