@@ -11,6 +11,7 @@ import {
 import customAlert from '../../lib/customAlert';
 import customDialog from '../../lib/customDialog';
 import customEditDialog from '../../lib/customEditDialog';
+import imgDesktop from '../../images/logo_desktop.png';
 
 function createPostContainer(post, feedElement) {
   const postElement = document.createElement('div');
@@ -164,7 +165,7 @@ export default () => {
 
   const content = `
     <header class = "headerFeed">
-      <img id= "logoMobileFeed" src="./images/logo_desktop.png" alt="logo_cashNet">
+      <img id= "logoMobileFeed" src="${imgDesktop}" alt="logo_cashNet">
       <section class='menu-bar-header'>
         <nav class="nav-header">
           <ul class="ul-header">

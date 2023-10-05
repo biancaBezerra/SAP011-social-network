@@ -2,6 +2,7 @@ import { createUser } from '../../firebase/firebaseAuth';
 import { userData } from '../../firebase/firebaseStore';
 import customAlert from '../../lib/customAlert';
 import { togglePasswordVisibility } from '../../lib/passwordToggle';
+import imgDesktop from '../../images/logo_desktop.png';
 
 export default () => {
   const registerContainer = document.createElement('div');
@@ -9,7 +10,7 @@ export default () => {
 
   const registerTemplate = `
     <header>
-      <img class= "logoMobileRegister" src="./images/logo_desktop.png" alt="logo_cashNet">
+      <img class= "logoMobileRegister" src="${imgDesktop}" alt="logo_cashNet">
       <h2 id = "registerH2">Cadastre-se</h2>
     </header>
 

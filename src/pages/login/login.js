@@ -1,6 +1,9 @@
 import { signIn, signInGoogle } from '../../firebase/firebaseAuth';
 import { togglePasswordVisibility } from '../../lib/passwordToggle';
 import customAlert from '../../lib/customAlert';
+import imgMobile from '../../images/logo_mobile.png';
+import imgDesktop from '../../images/logo_pgInicial.png';
+import imgGoogle from '../../images/google-icon.png';
 
 function autenticationLogin(container) {
   const loginUser = container.querySelector('#loginEmailPassword');
@@ -81,8 +84,8 @@ export const getLoginPage = () => {
   const template = `
       <header id = "headerLogin">
         <h2>Trocando insights valiosos para se manter atualizado sobre as últimas tendências financeiras</h2>
-        <img id= "logoMobile" src="./images/logo_mobile.png" alt="logo_cashNet">
-        <img id= "logoDesktopFeed" src="./images/logo_pgInicial.png" alt="logo_cashNet">
+        <img id= "logoMobile" src="${imgMobile}" alt="logo_cashNet">
+        <img id= "logoDesktopFeed" src="${imgDesktop}" alt="logo_cashNet">
       </header>
 
       <section class ="loginContainer" id="loginContainer">
@@ -104,7 +107,7 @@ export const getLoginPage = () => {
           
         <section id="loginGoogle">
           <button class = "button-login-google" id="google"> Entre com Google</button>
-          <img id= "googleLogo" src="./images/google-icon.png" alt="logo_google">
+          <img id= "googleLogo" src="${imgGoogle}" alt="logo_google">
         </section>
           
         <section id="register">

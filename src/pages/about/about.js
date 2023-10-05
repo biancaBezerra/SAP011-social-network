@@ -1,4 +1,4 @@
-import img from '../../images/logo_desktop';
+import img from '../../images/logo_desktop.png';
 
 export default () => {
   const aboutContainer = document.createElement('div');
