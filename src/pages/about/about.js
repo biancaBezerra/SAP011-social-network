@@ -1,9 +1,11 @@
+import img from '../../images/logo_desktop';
+
 export default () => {
   const aboutContainer = document.createElement('div');
 
   const aboutTemplate = `
       <header id = "headerAbout">
-          <img class= "logoMobileAbout" src="./images/logo_desktop.png" alt="logo_cashNet">
+          <img class= "logoMobileAbout" src="${img}" alt="logo_cashNet">
       </header>
       
       <h3>Conectando Saberes Financeiros</h3>
